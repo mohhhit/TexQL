@@ -1,11 +1,11 @@
-# TexQL - Natural Language to SQL/MongoDB Query Generator
+# NoNoQL - Natural Language to SQL/MongoDB Query Generator
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Transformers](https://img.shields.io/badge/Transformers-4.36-orange)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.29-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-TexQL is an NLP-based system that converts natural language queries into SQL and MongoDB statements for CRUD operations. Built using T5 transformer models and trained on synthetic industry data.
+NoNoQL is an NLP-based system that converts natural language queries into SQL and MongoDB statements for CRUD operations. Built using T5 transformer models and trained on synthetic industry data.
 
 ## ⚡ Quick Commands
 
@@ -44,7 +44,7 @@ python inference.py --query "your query here" --type both
 ## 📁 Project Structure
 
 ```
-TexQL/
+NoNoQL/
 ├── data_generation.py          # Synthetic data generation script
 ├── training_colab_balanced.ipynb  # Balanced training notebook (Colab)
 ├── app.py                      # Streamlit frontend application
@@ -73,7 +73,7 @@ TexQL/
 
 ```bash
 # Clone the repository
-cd TexQL
+cd NoNoQL
 
 # Create virtual environment (recommended)
 python -m venv venv
@@ -220,10 +220,10 @@ In the sidebar, you can:
 ### Python API
 
 ```python
-from app import TexQLModel
+from app import NoNoQLModel
 
 # Load model
-sql_model = TexQLModel("models/texql-sql-final", target_type="sql")
+sql_model = NoNoQLModel("models/NoNoQL-sql-final", target_type="sql")
 
 # Generate query
 query = sql_model.generate_query("Show all employees with salary greater than 50000")
@@ -306,7 +306,7 @@ gradient_accumulation_steps=4
 **2. Model Not Loading**
 ```bash
 # Check model path
-ls models/texql-sql-final/
+ls models/NoNoQL-sql-final/
 # Should contain: config.json, pytorch_model.bin, tokenizer files
 ```
 
@@ -399,14 +399,15 @@ For issues, questions, or suggestions:
 If you use this project in your research, please cite:
 
 ```bibtex
-@software{texql2024,
-  title={TexQL: Natural Language to SQL/MongoDB Query Generator},
+@software{NoNoQL2024,
+  title={NoNoQL: Natural Language to SQL/MongoDB Query Generator},
   author={Your Name},
   year={2024},
-  url={https://github.com/yourusername/texql}
+  url={https://github.com/yourusername/NoNoQL}
 }
 ```
 
 ---
 
 **Happy Querying! 🚀**
+
