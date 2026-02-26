@@ -1,0 +1,1412 @@
+natural_language,sql,mongodb,operation
+Remove products where product_id is 2233,DELETE FROM products WHERE product_id = '2233';,db.products.deleteMany({product_id: '2233'}),DELETE
+"Insert a new order with order_id as 2942, customer_name as Holly Bradford, product_name as Carol Gross","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2942, 'Holly Bradford', 'Carol Gross', 1662, '2023-03-05', 33399.43);","db.orders.insertOne({
+  ""order_id"": 2942,
+  ""customer_name"": ""Holly Bradford"",
+  ""product_name"": ""Carol Gross"",
+  ""quantity"": 1662,
+  ""order_date"": ""2023-03-05"",
+  ""total_amount"": 33399.43
+})",CREATE
+Change department_id to 4041 for all departments,UPDATE departments SET department_id = '4041';,"db.departments.updateMany({}, {$set: {department_id: '4041'}})",UPDATE
+"Insert a new product with product_id as 6269, product_name as Allison Rodriguez, category as Furniture","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6269, 'Allison Rodriguez', 'Furniture', 67429.07, 2465, 'Fisher-Bryant');","db.products.insertOne({
+  ""product_id"": 6269,
+  ""product_name"": ""Allison Rodriguez"",
+  ""category"": ""Furniture"",
+  ""price"": 67429.07,
+  ""stock_quantity"": 2465,
+  ""supplier"": ""Fisher-Bryant""
+})",CREATE
+"Insert a new department with department_id as 5854, department_name as Cynthia Lee, manager_id as 3886","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (5854, 'Cynthia Lee', 3886, 72293.04, 'Johnsonchester');","db.departments.insertOne({
+  ""department_id"": 5854,
+  ""department_name"": ""Cynthia Lee"",
+  ""manager_id"": 3886,
+  ""budget"": 72293.04,
+  ""location"": ""Johnsonchester""
+})",CREATE
+"Insert a new product with product_id as 4883, product_name as Jose Cardenas, category as Office Supplies","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (4883, 'Jose Cardenas', 'Office Supplies', 25485.59, 2236, 'Blair Ltd');","db.products.insertOne({
+  ""product_id"": 4883,
+  ""product_name"": ""Jose Cardenas"",
+  ""category"": ""Office Supplies"",
+  ""price"": 25485.59,
+  ""stock_quantity"": 2236,
+  ""supplier"": ""Blair Ltd""
+})",CREATE
+Show all employees,SELECT * FROM employees;,db.employees.find({}),READ
+Remove departments where budget is 96744.69,DELETE FROM departments WHERE budget = '96744.69';,db.departments.deleteMany({budget: '96744.69'}),DELETE
+Delete products with stock_quantity less than 28369,DELETE FROM products WHERE stock_quantity < 28369;,db.products.deleteMany({stock_quantity: {$lt: 28369}}),DELETE
+Increase product_id by 1683 in products where price equals 97265.52,UPDATE products SET product_id = product_id + 1683 WHERE price = '97265.52';,"db.products.updateMany({price: '97265.52'}, {$inc: {product_id: 1683}})",UPDATE
+Delete all employees,DELETE FROM employees;,db.employees.deleteMany({}),DELETE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Increase product_id by 441 in products where category equals Office Supplies,UPDATE products SET product_id = product_id + 441 WHERE category = 'Office Supplies';,"db.products.updateMany({category: 'Office Supplies'}, {$inc: {product_id: 441}})",UPDATE
+"Insert a new product with product_id as 4539, product_name as Chris Carpenter, category as Furniture","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (4539, 'Chris Carpenter', 'Furniture', 85930.39, 5598, 'Graves-Blanchard');","db.products.insertOne({
+  ""product_id"": 4539,
+  ""product_name"": ""Chris Carpenter"",
+  ""category"": ""Furniture"",
+  ""price"": 85930.39,
+  ""stock_quantity"": 5598,
+  ""supplier"": ""Graves-Blanchard""
+})",CREATE
+Update orders set customer_name to Carly Adams where order_date is 2025-02-26,UPDATE orders SET customer_name = 'Carly Adams' WHERE order_date = '2025-02-26';,"db.orders.updateMany({order_date: '2025-02-26'}, {$set: {customer_name: 'Carly Adams'}})",UPDATE
+"Insert a new order with order_id as 3932, customer_name as Randall Allen, product_name as Emily Odom","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (3932, 'Randall Allen', 'Emily Odom', 607, '2022-06-06', 89913.47);","db.orders.insertOne({
+  ""order_id"": 3932,
+  ""customer_name"": ""Randall Allen"",
+  ""product_name"": ""Emily Odom"",
+  ""quantity"": 607,
+  ""order_date"": ""2022-06-06"",
+  ""total_amount"": 89913.47
+})",CREATE
+Delete projects with project_id less than 3966,DELETE FROM projects WHERE project_id < 3966;,db.projects.deleteMany({project_id: {$lt: 3966}}),DELETE
+"Insert a new department with department_id as 939, department_name as Raymond Shepard, manager_id as 8713","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (939, 'Raymond Shepard', 8713, 37479.56, 'West Brittany');","db.departments.insertOne({
+  ""department_id"": 939,
+  ""department_name"": ""Raymond Shepard"",
+  ""manager_id"": 8713,
+  ""budget"": 37479.56,
+  ""location"": ""West Brittany""
+})",CREATE
+Show average order_id from orders,SELECT AVG(order_id) FROM orders;,"db.orders.aggregate([{$group: {_id: null, avg: {$avg: '$order_id'}}}])",READ
+Find employees where age contains where,SELECT * FROM employees WHERE age LIKE '%where%';,"db.employees.find({age: {$regex: 'where', $options: 'i'}})",READ
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+"Insert a new product with product_id as 2357, product_name as John Harrington, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (2357, 'John Harrington', 'Electronics', 74651.21, 660, 'Esparza-Flynn');","db.products.insertOne({
+  ""product_id"": 2357,
+  ""product_name"": ""John Harrington"",
+  ""category"": ""Electronics"",
+  ""price"": 74651.21,
+  ""stock_quantity"": 660,
+  ""supplier"": ""Esparza-Flynn""
+})",CREATE
+"Insert a new project with project_id as 9542, project_name as Devon Young, start_date as 2023-03-17","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (9542, 'Devon Young', '2023-03-17', '2022-02-24', 79560.56, 'Completed');","db.projects.insertOne({
+  ""project_id"": 9542,
+  ""project_name"": ""Devon Young"",
+  ""start_date"": ""2023-03-17"",
+  ""end_date"": ""2022-02-24"",
+  ""budget"": 79560.56,
+  ""status"": ""Completed""
+})",CREATE
+Find employees where hire_date is 2023-11-19,SELECT * FROM employees WHERE hire_date = '2023-11-19';,db.employees.find({hire_date: '2023-11-19'}),READ
+Get top 17 projects ordered by project_name,SELECT * FROM projects ORDER BY project_name DESC LIMIT 17;,db.projects.find({}).sort({project_name: -1}).limit(17),READ
+"Insert a new project with project_id as 2156, project_name as Francis Garcia, start_date as 2026-02-12","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (2156, 'Francis Garcia', '2026-02-12', '2023-05-08', 14780.65, 'Active');","db.projects.insertOne({
+  ""project_id"": 2156,
+  ""project_name"": ""Francis Garcia"",
+  ""start_date"": ""2026-02-12"",
+  ""end_date"": ""2023-05-08"",
+  ""budget"": 14780.65,
+  ""status"": ""Active""
+})",CREATE
+Change product_name to Erica Graham for all products,UPDATE products SET product_name = 'Erica Graham';,"db.products.updateMany({}, {$set: {product_name: 'Erica Graham'}})",UPDATE
+"Insert a new employee with employee_id as 5516, name as Dawn Morgan DDS, email as xmiller@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5516, 'Dawn Morgan DDS', 'xmiller@example.org', 'Sales', 35010.66, '2022-11-09', 9889);","db.employees.insertOne({
+  ""employee_id"": 5516,
+  ""name"": ""Dawn Morgan DDS"",
+  ""email"": ""xmiller@example.org"",
+  ""department"": ""Sales"",
+  ""salary"": 35010.66,
+  ""hire_date"": ""2022-11-09"",
+  ""age"": 9889
+})",CREATE
+Delete all employees,DELETE FROM employees;,db.employees.deleteMany({}),DELETE
+Get top 19 orders ordered by order_id,SELECT * FROM orders ORDER BY order_id DESC LIMIT 19;,db.orders.find({}).sort({order_id: -1}).limit(19),READ
+Find products where price is 82166.77,SELECT * FROM products WHERE price = '82166.77';,db.products.find({price: '82166.77'}),READ
+"Insert a new employee with employee_id as 7440, name as Daniel Waller, email as khanbenjamin@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (7440, 'Daniel Waller', 'khanbenjamin@example.com', 'Marketing', 26499.43, '2024-12-04', 1315);","db.employees.insertOne({
+  ""employee_id"": 7440,
+  ""name"": ""Daniel Waller"",
+  ""email"": ""khanbenjamin@example.com"",
+  ""department"": ""Marketing"",
+  ""salary"": 26499.43,
+  ""hire_date"": ""2024-12-04"",
+  ""age"": 1315
+})",CREATE
+"Insert a new project with project_id as 8493, project_name as Mr. Rickey Bell, start_date as 2025-06-28","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (8493, 'Mr. Rickey Bell', '2025-06-28', '2022-10-15', 69197.28, 'Active');","db.projects.insertOne({
+  ""project_id"": 8493,
+  ""project_name"": ""Mr. Rickey Bell"",
+  ""start_date"": ""2025-06-28"",
+  ""end_date"": ""2022-10-15"",
+  ""budget"": 69197.28,
+  ""status"": ""Active""
+})",CREATE
+Change stock_quantity to 4190 for all products,UPDATE products SET stock_quantity = '4190';,"db.products.updateMany({}, {$set: {stock_quantity: '4190'}})",UPDATE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+Delete projects with project_id less than 11431,DELETE FROM projects WHERE project_id < 11431;,db.projects.deleteMany({project_id: {$lt: 11431}}),DELETE
+Change department_name to Chase Roach for all departments,UPDATE departments SET department_name = 'Chase Roach';,"db.departments.updateMany({}, {$set: {department_name: 'Chase Roach'}})",UPDATE
+Change email to davidmartinez@example.com for all employees,UPDATE employees SET email = 'davidmartinez@example.com';,"db.employees.updateMany({}, {$set: {email: 'davidmartinez@example.com'}})",UPDATE
+"Update products set product_name to Richard Marsh where supplier is Wyatt, Rivas and Allen","UPDATE products SET product_name = 'Richard Marsh' WHERE supplier = 'Wyatt, Rivas and Allen';","db.products.updateMany({supplier: 'Wyatt, Rivas and Allen'}, {$set: {product_name: 'Richard Marsh'}})",UPDATE
+Show projects with start_date greater than 33489,SELECT * FROM projects WHERE start_date > 33489;,db.projects.find({start_date: {$gt: 33489}}),READ
+Get top 38 products ordered by price,SELECT * FROM products ORDER BY price DESC LIMIT 38;,db.products.find({}).sort({price: -1}).limit(38),READ
+"Insert a new product with product_id as 8322, product_name as Lisa Harris, category as Software","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (8322, 'Lisa Harris', 'Software', 97407.98, 5596, 'Cook-Stokes');","db.products.insertOne({
+  ""product_id"": 8322,
+  ""product_name"": ""Lisa Harris"",
+  ""category"": ""Software"",
+  ""price"": 97407.98,
+  ""stock_quantity"": 5596,
+  ""supplier"": ""Cook-Stokes""
+})",CREATE
+"Insert a new order with order_id as 3128, customer_name as Lisa Jones, product_name as Scott Barnes","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (3128, 'Lisa Jones', 'Scott Barnes', 626, '2022-05-15', 73609.93);","db.orders.insertOne({
+  ""order_id"": 3128,
+  ""customer_name"": ""Lisa Jones"",
+  ""product_name"": ""Scott Barnes"",
+  ""quantity"": 626,
+  ""order_date"": ""2022-05-15"",
+  ""total_amount"": 73609.93
+})",CREATE
+Get top 49 departments ordered by department_id,SELECT * FROM departments ORDER BY department_id DESC LIMIT 49;,db.departments.find({}).sort({department_id: -1}).limit(49),READ
+"Insert a new department with department_id as 5632, department_name as Charles Ramos, manager_id as 5478","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (5632, 'Charles Ramos', 5478, 9868.96, 'Larryberg');","db.departments.insertOne({
+  ""department_id"": 5632,
+  ""department_name"": ""Charles Ramos"",
+  ""manager_id"": 5478,
+  ""budget"": 9868.96,
+  ""location"": ""Larryberg""
+})",CREATE
+Count all projects,SELECT COUNT(*) FROM projects;,db.projects.countDocuments({}),READ
+"Insert a new project with project_id as 6547, project_name as Steven Wise, start_date as 2021-12-12","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (6547, 'Steven Wise', '2021-12-12', '2022-12-13', 91938.5, 'Cancelled');","db.projects.insertOne({
+  ""project_id"": 6547,
+  ""project_name"": ""Steven Wise"",
+  ""start_date"": ""2021-12-12"",
+  ""end_date"": ""2022-12-13"",
+  ""budget"": 91938.5,
+  ""status"": ""Cancelled""
+})",CREATE
+"Insert a new project with project_id as 8885, project_name as Rebecca Alvarez, start_date as 2021-05-31","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (8885, 'Rebecca Alvarez', '2021-05-31', '2025-11-25', 11269.03, 'Cancelled');","db.projects.insertOne({
+  ""project_id"": 8885,
+  ""project_name"": ""Rebecca Alvarez"",
+  ""start_date"": ""2021-05-31"",
+  ""end_date"": ""2025-11-25"",
+  ""budget"": 11269.03,
+  ""status"": ""Cancelled""
+})",CREATE
+Find projects where status contains develop,SELECT * FROM projects WHERE status LIKE '%develop%';,"db.projects.find({status: {$regex: 'develop', $options: 'i'}})",READ
+Update employees set department to Finance where salary is 93834.98,UPDATE employees SET department = 'Finance' WHERE salary = '93834.98';,"db.employees.updateMany({salary: '93834.98'}, {$set: {department: 'Finance'}})",UPDATE
+Update projects set budget to 1157.24 where project_name is Janet Alvarez,UPDATE projects SET budget = '1157.24' WHERE project_name = 'Janet Alvarez';,"db.projects.updateMany({project_name: 'Janet Alvarez'}, {$set: {budget: '1157.24'}})",UPDATE
+"Insert a new project with project_id as 6872, project_name as Gabriela Davis, start_date as 2024-05-10","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (6872, 'Gabriela Davis', '2024-05-10', '2021-05-07', 15992.46, 'Active');","db.projects.insertOne({
+  ""project_id"": 6872,
+  ""project_name"": ""Gabriela Davis"",
+  ""start_date"": ""2024-05-10"",
+  ""end_date"": ""2021-05-07"",
+  ""budget"": 15992.46,
+  ""status"": ""Active""
+})",CREATE
+Change order_date to 2021-05-18 for all orders,UPDATE orders SET order_date = '2021-05-18';,"db.orders.updateMany({}, {$set: {order_date: '2021-05-18'}})",UPDATE
+Remove departments where department_name is Miranda Diaz,DELETE FROM departments WHERE department_name = 'Miranda Diaz';,db.departments.deleteMany({department_name: 'Miranda Diaz'}),DELETE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+Remove projects where start_date is 2023-11-07,DELETE FROM projects WHERE start_date = '2023-11-07';,db.projects.deleteMany({start_date: '2023-11-07'}),DELETE
+Delete orders with total_amount less than 40337,DELETE FROM orders WHERE total_amount < 40337;,db.orders.deleteMany({total_amount: {$lt: 40337}}),DELETE
+Increase manager_id by 4145 in departments where budget equals 78440.51,UPDATE departments SET manager_id = manager_id + 4145 WHERE budget = '78440.51';,"db.departments.updateMany({budget: '78440.51'}, {$inc: {manager_id: 4145}})",UPDATE
+Get top 28 orders ordered by customer_name,SELECT * FROM orders ORDER BY customer_name DESC LIMIT 28;,db.orders.find({}).sort({customer_name: -1}).limit(28),READ
+Find products where price contains small,SELECT * FROM products WHERE price LIKE '%small%';,"db.products.find({price: {$regex: 'small', $options: 'i'}})",READ
+Show all orders,SELECT * FROM orders;,db.orders.find({}),READ
+Get top 10 projects ordered by start_date,SELECT * FROM projects ORDER BY start_date DESC LIMIT 10;,db.projects.find({}).sort({start_date: -1}).limit(10),READ
+Show average employee_id from employees,SELECT AVG(employee_id) FROM employees;,"db.employees.aggregate([{$group: {_id: null, avg: {$avg: '$employee_id'}}}])",READ
+Increase order_id by 2757 in orders where order_date equals 2021-11-28,UPDATE orders SET order_id = order_id + 2757 WHERE order_date = '2021-11-28';,"db.orders.updateMany({order_date: '2021-11-28'}, {$inc: {order_id: 2757}})",UPDATE
+Change price to 54173.53 for all products,UPDATE products SET price = '54173.53';,"db.products.updateMany({}, {$set: {price: '54173.53'}})",UPDATE
+"Insert a new product with product_id as 9457, product_name as Chad Moran, category as Hardware","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (9457, 'Chad Moran', 'Hardware', 84048.24, 7519, 'Martin Group');","db.products.insertOne({
+  ""product_id"": 9457,
+  ""product_name"": ""Chad Moran"",
+  ""category"": ""Hardware"",
+  ""price"": 84048.24,
+  ""stock_quantity"": 7519,
+  ""supplier"": ""Martin Group""
+})",CREATE
+Delete employees with employee_id less than 42081,DELETE FROM employees WHERE employee_id < 42081;,db.employees.deleteMany({employee_id: {$lt: 42081}}),DELETE
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+"Insert a new employee with employee_id as 5949, name as Rick Pope, email as elizabeth90@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5949, 'Rick Pope', 'elizabeth90@example.com', 'Operations', 81032.66, '2021-08-18', 8307);","db.employees.insertOne({
+  ""employee_id"": 5949,
+  ""name"": ""Rick Pope"",
+  ""email"": ""elizabeth90@example.com"",
+  ""department"": ""Operations"",
+  ""salary"": 81032.66,
+  ""hire_date"": ""2021-08-18"",
+  ""age"": 8307
+})",CREATE
+"Change supplier to Hall, Johnson and Rose for all products","UPDATE products SET supplier = 'Hall, Johnson and Rose';","db.products.updateMany({}, {$set: {supplier: 'Hall, Johnson and Rose'}})",UPDATE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+Remove employees where salary is 31660.67,DELETE FROM employees WHERE salary = '31660.67';,db.employees.deleteMany({salary: '31660.67'}),DELETE
+"Insert a new department with department_id as 8312, department_name as Pamela Mccoy, manager_id as 7665","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (8312, 'Pamela Mccoy', 7665, 29199.28, 'North Monicaborough');","db.departments.insertOne({
+  ""department_id"": 8312,
+  ""department_name"": ""Pamela Mccoy"",
+  ""manager_id"": 7665,
+  ""budget"": 29199.28,
+  ""location"": ""North Monicaborough""
+})",CREATE
+"Insert a new order with order_id as 9147, customer_name as Jason Lee, product_name as Trevor Downs","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (9147, 'Jason Lee', 'Trevor Downs', 4528, '2023-08-07', 69973.35);","db.orders.insertOne({
+  ""order_id"": 9147,
+  ""customer_name"": ""Jason Lee"",
+  ""product_name"": ""Trevor Downs"",
+  ""quantity"": 4528,
+  ""order_date"": ""2023-08-07"",
+  ""total_amount"": 69973.35
+})",CREATE
+Remove employees where age is 4974,DELETE FROM employees WHERE age = '4974';,db.employees.deleteMany({age: '4974'}),DELETE
+Show all employees,SELECT * FROM employees;,db.employees.find({}),READ
+"Insert a new project with project_id as 153, project_name as Mrs. Jessica Larson, start_date as 2026-01-31","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (153, 'Mrs. Jessica Larson', '2026-01-31', '2023-07-08', 27531.61, 'Cancelled');","db.projects.insertOne({
+  ""project_id"": 153,
+  ""project_name"": ""Mrs. Jessica Larson"",
+  ""start_date"": ""2026-01-31"",
+  ""end_date"": ""2023-07-08"",
+  ""budget"": 27531.61,
+  ""status"": ""Cancelled""
+})",CREATE
+"Insert a new order with order_id as 3859, customer_name as Glenda Stephens, product_name as Jason Cannon","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (3859, 'Glenda Stephens', 'Jason Cannon', 1012, '2022-02-28', 92679.36);","db.orders.insertOne({
+  ""order_id"": 3859,
+  ""customer_name"": ""Glenda Stephens"",
+  ""product_name"": ""Jason Cannon"",
+  ""quantity"": 1012,
+  ""order_date"": ""2022-02-28"",
+  ""total_amount"": 92679.36
+})",CREATE
+Show average manager_id from departments,SELECT AVG(manager_id) FROM departments;,"db.departments.aggregate([{$group: {_id: null, avg: {$avg: '$manager_id'}}}])",READ
+Delete all employees,DELETE FROM employees;,db.employees.deleteMany({}),DELETE
+Remove projects where start_date is 2022-10-02,DELETE FROM projects WHERE start_date = '2022-10-02';,db.projects.deleteMany({start_date: '2022-10-02'}),DELETE
+Update projects set start_date to 2022-08-18 where end_date is 2025-11-16,UPDATE projects SET start_date = '2022-08-18' WHERE end_date = '2025-11-16';,"db.projects.updateMany({end_date: '2025-11-16'}, {$set: {start_date: '2022-08-18'}})",UPDATE
+Count all projects,SELECT COUNT(*) FROM projects;,db.projects.countDocuments({}),READ
+Delete employees with age less than 25334,DELETE FROM employees WHERE age < 25334;,db.employees.deleteMany({age: {$lt: 25334}}),DELETE
+"Find products where supplier is Wilson, Mitchell and Henderson","SELECT * FROM products WHERE supplier = 'Wilson, Mitchell and Henderson';","db.products.find({supplier: 'Wilson, Mitchell and Henderson'})",READ
+Show departments with location greater than 48817,SELECT * FROM departments WHERE location > 48817;,db.departments.find({location: {$gt: 48817}}),READ
+"Insert a new product with product_id as 3695, product_name as Sandra Kennedy, category as Hardware","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (3695, 'Sandra Kennedy', 'Hardware', 81617.13, 2821, 'Sims LLC');","db.products.insertOne({
+  ""product_id"": 3695,
+  ""product_name"": ""Sandra Kennedy"",
+  ""category"": ""Hardware"",
+  ""price"": 81617.13,
+  ""stock_quantity"": 2821,
+  ""supplier"": ""Sims LLC""
+})",CREATE
+Show all projects,SELECT * FROM projects;,db.projects.find({}),READ
+"Insert a new department with department_id as 2394, department_name as Aaron White, manager_id as 1061","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (2394, 'Aaron White', 1061, 93956.6, 'South Michael');","db.departments.insertOne({
+  ""department_id"": 2394,
+  ""department_name"": ""Aaron White"",
+  ""manager_id"": 1061,
+  ""budget"": 93956.6,
+  ""location"": ""South Michael""
+})",CREATE
+"Insert a new project with project_id as 3155, project_name as Thomas Kane, start_date as 2022-08-27","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (3155, 'Thomas Kane', '2022-08-27', '2024-11-30', 9707.86, 'Active');","db.projects.insertOne({
+  ""project_id"": 3155,
+  ""project_name"": ""Thomas Kane"",
+  ""start_date"": ""2022-08-27"",
+  ""end_date"": ""2024-11-30"",
+  ""budget"": 9707.86,
+  ""status"": ""Active""
+})",CREATE
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+Remove departments where department_name is Amy Davis,DELETE FROM departments WHERE department_name = 'Amy Davis';,db.departments.deleteMany({department_name: 'Amy Davis'}),DELETE
+Delete employees with salary less than 16893,DELETE FROM employees WHERE salary < 16893;,db.employees.deleteMany({salary: {$lt: 16893}}),DELETE
+Update departments set manager_id to 1194 where department_id is 8499,UPDATE departments SET manager_id = '1194' WHERE department_id = '8499';,"db.departments.updateMany({department_id: '8499'}, {$set: {manager_id: '1194'}})",UPDATE
+Show orders with quantity greater than 96472,SELECT * FROM orders WHERE quantity > 96472;,db.orders.find({quantity: {$gt: 96472}}),READ
+Remove products where product_id is 7037,DELETE FROM products WHERE product_id = '7037';,db.products.deleteMany({product_id: '7037'}),DELETE
+Delete all orders,DELETE FROM orders;,db.orders.deleteMany({}),DELETE
+"Insert a new department with department_id as 1888, department_name as Raymond Benson, manager_id as 3300","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (1888, 'Raymond Benson', 3300, 76731.69, 'Samanthashire');","db.departments.insertOne({
+  ""department_id"": 1888,
+  ""department_name"": ""Raymond Benson"",
+  ""manager_id"": 3300,
+  ""budget"": 76731.69,
+  ""location"": ""Samanthashire""
+})",CREATE
+Show employees with employee_id greater than 93687,SELECT * FROM employees WHERE employee_id > 93687;,db.employees.find({employee_id: {$gt: 93687}}),READ
+Delete projects with budget less than 43134,DELETE FROM projects WHERE budget < 43134;,db.projects.deleteMany({budget: {$lt: 43134}}),DELETE
+Delete all orders,DELETE FROM orders;,db.orders.deleteMany({}),DELETE
+Increase total_amount by 1818 in orders where product_name equals Timothy Romero,UPDATE orders SET total_amount = total_amount + 1818 WHERE product_name = 'Timothy Romero';,"db.orders.updateMany({product_name: 'Timothy Romero'}, {$inc: {total_amount: 1818}})",UPDATE
+Increase stock_quantity by 1710 in products where price equals 31569.48,UPDATE products SET stock_quantity = stock_quantity + 1710 WHERE price = '31569.48';,"db.products.updateMany({price: '31569.48'}, {$inc: {stock_quantity: 1710}})",UPDATE
+Increase budget by 1205 in projects where start_date equals 2021-11-01,UPDATE projects SET budget = budget + 1205 WHERE start_date = '2021-11-01';,"db.projects.updateMany({start_date: '2021-11-01'}, {$inc: {budget: 1205}})",UPDATE
+Delete employees with age less than 10268,DELETE FROM employees WHERE age < 10268;,db.employees.deleteMany({age: {$lt: 10268}}),DELETE
+Increase quantity by 1391 in orders where order_id equals 6918,UPDATE orders SET quantity = quantity + 1391 WHERE order_id = '6918';,"db.orders.updateMany({order_id: '6918'}, {$inc: {quantity: 1391}})",UPDATE
+Count all orders,SELECT COUNT(*) FROM orders;,db.orders.countDocuments({}),READ
+Increase product_id by 4757 in products where product_id equals 9751,UPDATE products SET product_id = product_id + 4757 WHERE product_id = '9751';,"db.products.updateMany({product_id: '9751'}, {$inc: {product_id: 4757}})",UPDATE
+"Insert a new order with order_id as 9697, customer_name as Kimberly Hanson, product_name as Janice Elliott","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (9697, 'Kimberly Hanson', 'Janice Elliott', 5268, '2025-09-10', 19929.67);","db.orders.insertOne({
+  ""order_id"": 9697,
+  ""customer_name"": ""Kimberly Hanson"",
+  ""product_name"": ""Janice Elliott"",
+  ""quantity"": 5268,
+  ""order_date"": ""2025-09-10"",
+  ""total_amount"": 19929.67
+})",CREATE
+Remove orders where customer_name is Thomas Pope,DELETE FROM orders WHERE customer_name = 'Thomas Pope';,db.orders.deleteMany({customer_name: 'Thomas Pope'}),DELETE
+"Insert a new department with department_id as 7361, department_name as Zachary Hubbard, manager_id as 4666","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (7361, 'Zachary Hubbard', 4666, 16109.29, 'East Catherine');","db.departments.insertOne({
+  ""department_id"": 7361,
+  ""department_name"": ""Zachary Hubbard"",
+  ""manager_id"": 4666,
+  ""budget"": 16109.29,
+  ""location"": ""East Catherine""
+})",CREATE
+Delete products with price less than 36425,DELETE FROM products WHERE price < 36425;,db.products.deleteMany({price: {$lt: 36425}}),DELETE
+Change end_date to 2023-04-12 for all projects,UPDATE projects SET end_date = '2023-04-12';,"db.projects.updateMany({}, {$set: {end_date: '2023-04-12'}})",UPDATE
+"Insert a new project with project_id as 1772, project_name as Gary Carrillo, start_date as 2024-02-19","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (1772, 'Gary Carrillo', '2024-02-19', '2023-06-21', 69005.78, 'Pending');","db.projects.insertOne({
+  ""project_id"": 1772,
+  ""project_name"": ""Gary Carrillo"",
+  ""start_date"": ""2024-02-19"",
+  ""end_date"": ""2023-06-21"",
+  ""budget"": 69005.78,
+  ""status"": ""Pending""
+})",CREATE
+Remove orders where total_amount is 67011.92,DELETE FROM orders WHERE total_amount = '67011.92';,db.orders.deleteMany({total_amount: '67011.92'}),DELETE
+Update departments set manager_id to 8744 where manager_id is 2743,UPDATE departments SET manager_id = '8744' WHERE manager_id = '2743';,"db.departments.updateMany({manager_id: '2743'}, {$set: {manager_id: '8744'}})",UPDATE
+Delete projects with budget less than 10680,DELETE FROM projects WHERE budget < 10680;,db.projects.deleteMany({budget: {$lt: 10680}}),DELETE
+Find orders where total_amount contains animal,SELECT * FROM orders WHERE total_amount LIKE '%animal%';,"db.orders.find({total_amount: {$regex: 'animal', $options: 'i'}})",READ
+"Insert a new project with project_id as 1872, project_name as Jeremy Taylor, start_date as 2025-04-01","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (1872, 'Jeremy Taylor', '2025-04-01', '2024-06-17', 97696.05, 'Active');","db.projects.insertOne({
+  ""project_id"": 1872,
+  ""project_name"": ""Jeremy Taylor"",
+  ""start_date"": ""2025-04-01"",
+  ""end_date"": ""2024-06-17"",
+  ""budget"": 97696.05,
+  ""status"": ""Active""
+})",CREATE
+Update orders set customer_name to Brian Smith where customer_name is Grant Gonzalez,UPDATE orders SET customer_name = 'Brian Smith' WHERE customer_name = 'Grant Gonzalez';,"db.orders.updateMany({customer_name: 'Grant Gonzalez'}, {$set: {customer_name: 'Brian Smith'}})",UPDATE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+"Insert a new department with department_id as 3663, department_name as Katherine Goodman, manager_id as 653","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (3663, 'Katherine Goodman', 653, 45190.8, 'Wardberg');","db.departments.insertOne({
+  ""department_id"": 3663,
+  ""department_name"": ""Katherine Goodman"",
+  ""manager_id"": 653,
+  ""budget"": 45190.8,
+  ""location"": ""Wardberg""
+})",CREATE
+"Insert a new department with department_id as 3101, department_name as Raymond Singleton, manager_id as 4179","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (3101, 'Raymond Singleton', 4179, 1010.82, 'Lewischester');","db.departments.insertOne({
+  ""department_id"": 3101,
+  ""department_name"": ""Raymond Singleton"",
+  ""manager_id"": 4179,
+  ""budget"": 1010.82,
+  ""location"": ""Lewischester""
+})",CREATE
+"Insert a new project with project_id as 5536, project_name as Chelsea Hopkins, start_date as 2024-04-24","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (5536, 'Chelsea Hopkins', '2024-04-24', '2022-12-31', 27016.92, 'Pending');","db.projects.insertOne({
+  ""project_id"": 5536,
+  ""project_name"": ""Chelsea Hopkins"",
+  ""start_date"": ""2024-04-24"",
+  ""end_date"": ""2022-12-31"",
+  ""budget"": 27016.92,
+  ""status"": ""Pending""
+})",CREATE
+"Insert a new department with department_id as 6255, department_name as Allen Johns, manager_id as 3765","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (6255, 'Allen Johns', 3765, 59420.99, 'Port Brian');","db.departments.insertOne({
+  ""department_id"": 6255,
+  ""department_name"": ""Allen Johns"",
+  ""manager_id"": 3765,
+  ""budget"": 59420.99,
+  ""location"": ""Port Brian""
+})",CREATE
+"Insert a new department with department_id as 7221, department_name as Mark Davis, manager_id as 7120","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (7221, 'Mark Davis', 7120, 43067.66, 'Taraburgh');","db.departments.insertOne({
+  ""department_id"": 7221,
+  ""department_name"": ""Mark Davis"",
+  ""manager_id"": 7120,
+  ""budget"": 43067.66,
+  ""location"": ""Taraburgh""
+})",CREATE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+Increase price by 2937 in products where price equals 90247.31,UPDATE products SET price = price + 2937 WHERE price = '90247.31';,"db.products.updateMany({price: '90247.31'}, {$inc: {price: 2937}})",UPDATE
+Get top 44 departments ordered by budget,SELECT * FROM departments ORDER BY budget DESC LIMIT 44;,db.departments.find({}).sort({budget: -1}).limit(44),READ
+"Insert a new project with project_id as 2984, project_name as Sean Drake, start_date as 2024-07-26","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (2984, 'Sean Drake', '2024-07-26', '2022-08-23', 4248.9, 'Active');","db.projects.insertOne({
+  ""project_id"": 2984,
+  ""project_name"": ""Sean Drake"",
+  ""start_date"": ""2024-07-26"",
+  ""end_date"": ""2022-08-23"",
+  ""budget"": 4248.9,
+  ""status"": ""Active""
+})",CREATE
+"Insert a new order with order_id as 9403, customer_name as Albert Watkins, product_name as Terry Drake","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (9403, 'Albert Watkins', 'Terry Drake', 3719, '2025-04-02', 16707.96);","db.orders.insertOne({
+  ""order_id"": 9403,
+  ""customer_name"": ""Albert Watkins"",
+  ""product_name"": ""Terry Drake"",
+  ""quantity"": 3719,
+  ""order_date"": ""2025-04-02"",
+  ""total_amount"": 16707.96
+})",CREATE
+"Insert a new department with department_id as 3504, department_name as John Grimes, manager_id as 9523","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (3504, 'John Grimes', 9523, 4467.39, 'Kariburgh');","db.departments.insertOne({
+  ""department_id"": 3504,
+  ""department_name"": ""John Grimes"",
+  ""manager_id"": 9523,
+  ""budget"": 4467.39,
+  ""location"": ""Kariburgh""
+})",CREATE
+Remove employees where employee_id is 9838,DELETE FROM employees WHERE employee_id = '9838';,db.employees.deleteMany({employee_id: '9838'}),DELETE
+Update products set price to 26682.74 where price is 32172.42,UPDATE products SET price = '26682.74' WHERE price = '32172.42';,"db.products.updateMany({price: '32172.42'}, {$set: {price: '26682.74'}})",UPDATE
+"Insert a new employee with employee_id as 1196, name as Crystal Rodriguez, email as sarahhuff@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (1196, 'Crystal Rodriguez', 'sarahhuff@example.org', 'Marketing', 74112.99, '2024-05-12', 6435);","db.employees.insertOne({
+  ""employee_id"": 1196,
+  ""name"": ""Crystal Rodriguez"",
+  ""email"": ""sarahhuff@example.org"",
+  ""department"": ""Marketing"",
+  ""salary"": 74112.99,
+  ""hire_date"": ""2024-05-12"",
+  ""age"": 6435
+})",CREATE
+Delete departments with budget less than 47832,DELETE FROM departments WHERE budget < 47832;,db.departments.deleteMany({budget: {$lt: 47832}}),DELETE
+Show average stock_quantity from products,SELECT AVG(stock_quantity) FROM products;,"db.products.aggregate([{$group: {_id: null, avg: {$avg: '$stock_quantity'}}}])",READ
+Show products with category greater than 33554,SELECT * FROM products WHERE category > 33554;,db.products.find({category: {$gt: 33554}}),READ
+Delete all employees,DELETE FROM employees;,db.employees.deleteMany({}),DELETE
+Update orders set order_date to 2022-09-28 where total_amount is 68972.87,UPDATE orders SET order_date = '2022-09-28' WHERE total_amount = '68972.87';,"db.orders.updateMany({total_amount: '68972.87'}, {$set: {order_date: '2022-09-28'}})",UPDATE
+Get top 32 projects ordered by status,SELECT * FROM projects ORDER BY status DESC LIMIT 32;,db.projects.find({}).sort({status: -1}).limit(32),READ
+Delete products with stock_quantity less than 29863,DELETE FROM products WHERE stock_quantity < 29863;,db.products.deleteMany({stock_quantity: {$lt: 29863}}),DELETE
+"Insert a new order with order_id as 2856, customer_name as John Kane, product_name as Laurie Decker","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2856, 'John Kane', 'Laurie Decker', 9560, '2025-06-14', 56107.94);","db.orders.insertOne({
+  ""order_id"": 2856,
+  ""customer_name"": ""John Kane"",
+  ""product_name"": ""Laurie Decker"",
+  ""quantity"": 9560,
+  ""order_date"": ""2025-06-14"",
+  ""total_amount"": 56107.94
+})",CREATE
+Get all department_id from departments,SELECT department_id FROM departments;,"db.departments.find({}, {department_id: 1})",READ
+Increase employee_id by 1013 in employees where employee_id equals 5187,UPDATE employees SET employee_id = employee_id + 1013 WHERE employee_id = '5187';,"db.employees.updateMany({employee_id: '5187'}, {$inc: {employee_id: 1013}})",UPDATE
+Increase product_id by 2728 in products where product_name equals Michael Chung,UPDATE products SET product_id = product_id + 2728 WHERE product_name = 'Michael Chung';,"db.products.updateMany({product_name: 'Michael Chung'}, {$inc: {product_id: 2728}})",UPDATE
+Show all employees,SELECT * FROM employees;,db.employees.find({}),READ
+Count all projects,SELECT COUNT(*) FROM projects;,db.projects.countDocuments({}),READ
+"Insert a new department with department_id as 819, department_name as Dr. Elizabeth Velez, manager_id as 8763","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (819, 'Dr. Elizabeth Velez', 8763, 49441.75, 'Lake Brandi');","db.departments.insertOne({
+  ""department_id"": 819,
+  ""department_name"": ""Dr. Elizabeth Velez"",
+  ""manager_id"": 8763,
+  ""budget"": 49441.75,
+  ""location"": ""Lake Brandi""
+})",CREATE
+Remove orders where quantity is 7639,DELETE FROM orders WHERE quantity = '7639';,db.orders.deleteMany({quantity: '7639'}),DELETE
+Update departments set budget to 94165.3 where budget is 59535.64,UPDATE departments SET budget = '94165.3' WHERE budget = '59535.64';,"db.departments.updateMany({budget: '59535.64'}, {$set: {budget: '94165.3'}})",UPDATE
+Delete employees with employee_id less than 20858,DELETE FROM employees WHERE employee_id < 20858;,db.employees.deleteMany({employee_id: {$lt: 20858}}),DELETE
+"Insert a new order with order_id as 1457, customer_name as Andrea Kelly, product_name as Linda Kennedy","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (1457, 'Andrea Kelly', 'Linda Kennedy', 332, '2023-10-17', 98038.06);","db.orders.insertOne({
+  ""order_id"": 1457,
+  ""customer_name"": ""Andrea Kelly"",
+  ""product_name"": ""Linda Kennedy"",
+  ""quantity"": 332,
+  ""order_date"": ""2023-10-17"",
+  ""total_amount"": 98038.06
+})",CREATE
+Remove employees where email is rroman@example.net,DELETE FROM employees WHERE email = 'rroman@example.net';,db.employees.deleteMany({email: 'rroman@example.net'}),DELETE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Get top 42 projects ordered by start_date,SELECT * FROM projects ORDER BY start_date DESC LIMIT 42;,db.projects.find({}).sort({start_date: -1}).limit(42),READ
+Get top 45 departments ordered by department_id,SELECT * FROM departments ORDER BY department_id DESC LIMIT 45;,db.departments.find({}).sort({department_id: -1}).limit(45),READ
+Remove projects where budget is 93060.8,DELETE FROM projects WHERE budget = '93060.8';,db.projects.deleteMany({budget: '93060.8'}),DELETE
+Update projects set budget to 29835.55 where end_date is 2024-07-10,UPDATE projects SET budget = '29835.55' WHERE end_date = '2024-07-10';,"db.projects.updateMany({end_date: '2024-07-10'}, {$set: {budget: '29835.55'}})",UPDATE
+Get top 25 employees ordered by name,SELECT * FROM employees ORDER BY name DESC LIMIT 25;,db.employees.find({}).sort({name: -1}).limit(25),READ
+"Insert a new employee with employee_id as 5891, name as Crystal Nelson, email as pamelalove@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5891, 'Crystal Nelson', 'pamelalove@example.com', 'HR', 55722.94, '2025-09-01', 1322);","db.employees.insertOne({
+  ""employee_id"": 5891,
+  ""name"": ""Crystal Nelson"",
+  ""email"": ""pamelalove@example.com"",
+  ""department"": ""HR"",
+  ""salary"": 55722.94,
+  ""hire_date"": ""2025-09-01"",
+  ""age"": 1322
+})",CREATE
+"Insert a new order with order_id as 3761, customer_name as Bruce Booker, product_name as Taylor Robinson","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (3761, 'Bruce Booker', 'Taylor Robinson', 8377, '2021-10-06', 77979.33);","db.orders.insertOne({
+  ""order_id"": 3761,
+  ""customer_name"": ""Bruce Booker"",
+  ""product_name"": ""Taylor Robinson"",
+  ""quantity"": 8377,
+  ""order_date"": ""2021-10-06"",
+  ""total_amount"": 77979.33
+})",CREATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+Increase order_id by 2443 in orders where order_date equals 2026-01-24,UPDATE orders SET order_id = order_id + 2443 WHERE order_date = '2026-01-24';,"db.orders.updateMany({order_date: '2026-01-24'}, {$inc: {order_id: 2443}})",UPDATE
+Remove projects where end_date is 2024-04-10,DELETE FROM projects WHERE end_date = '2024-04-10';,db.projects.deleteMany({end_date: '2024-04-10'}),DELETE
+Remove departments where department_id is 283,DELETE FROM departments WHERE department_id = '283';,db.departments.deleteMany({department_id: '283'}),DELETE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+"Insert a new product with product_id as 6636, product_name as Michael Mitchell, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6636, 'Michael Mitchell', 'Electronics', 39003.86, 9634, 'Robinson-White');","db.products.insertOne({
+  ""product_id"": 6636,
+  ""product_name"": ""Michael Mitchell"",
+  ""category"": ""Electronics"",
+  ""price"": 39003.86,
+  ""stock_quantity"": 9634,
+  ""supplier"": ""Robinson-White""
+})",CREATE
+"Insert a new project with project_id as 2006, project_name as Kristina Swanson, start_date as 2022-02-10","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (2006, 'Kristina Swanson', '2022-02-10', '2022-04-09', 73493.13, 'Active');","db.projects.insertOne({
+  ""project_id"": 2006,
+  ""project_name"": ""Kristina Swanson"",
+  ""start_date"": ""2022-02-10"",
+  ""end_date"": ""2022-04-09"",
+  ""budget"": 73493.13,
+  ""status"": ""Active""
+})",CREATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+"Insert a new project with project_id as 291, project_name as Heather Pierce, start_date as 2022-11-07","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (291, 'Heather Pierce', '2022-11-07', '2024-05-23', 1640.47, 'Completed');","db.projects.insertOne({
+  ""project_id"": 291,
+  ""project_name"": ""Heather Pierce"",
+  ""start_date"": ""2022-11-07"",
+  ""end_date"": ""2024-05-23"",
+  ""budget"": 1640.47,
+  ""status"": ""Completed""
+})",CREATE
+"Insert a new order with order_id as 3508, customer_name as Laura Mullen, product_name as Brenda Kennedy","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (3508, 'Laura Mullen', 'Brenda Kennedy', 9377, '2022-01-26', 24578.55);","db.orders.insertOne({
+  ""order_id"": 3508,
+  ""customer_name"": ""Laura Mullen"",
+  ""product_name"": ""Brenda Kennedy"",
+  ""quantity"": 9377,
+  ""order_date"": ""2022-01-26"",
+  ""total_amount"": 24578.55
+})",CREATE
+Count all departments,SELECT COUNT(*) FROM departments;,db.departments.countDocuments({}),READ
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+"Insert a new department with department_id as 3825, department_name as Erica Parker, manager_id as 5733","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (3825, 'Erica Parker', 5733, 73807.64, 'Bentonstad');","db.departments.insertOne({
+  ""department_id"": 3825,
+  ""department_name"": ""Erica Parker"",
+  ""manager_id"": 5733,
+  ""budget"": 73807.64,
+  ""location"": ""Bentonstad""
+})",CREATE
+Change department to HR for all employees,UPDATE employees SET department = 'HR';,"db.employees.updateMany({}, {$set: {department: 'HR'}})",UPDATE
+Increase project_id by 2403 in projects where start_date equals 2024-10-31,UPDATE projects SET project_id = project_id + 2403 WHERE start_date = '2024-10-31';,"db.projects.updateMany({start_date: '2024-10-31'}, {$inc: {project_id: 2403}})",UPDATE
+Find products where product_name is Alexis Mendoza,SELECT * FROM products WHERE product_name = 'Alexis Mendoza';,db.products.find({product_name: 'Alexis Mendoza'}),READ
+Show departments with budget greater than 13303,SELECT * FROM departments WHERE budget > 13303;,db.departments.find({budget: {$gt: 13303}}),READ
+Remove orders where total_amount is 41100.74,DELETE FROM orders WHERE total_amount = '41100.74';,db.orders.deleteMany({total_amount: '41100.74'}),DELETE
+Find orders where total_amount is 74420.82,SELECT * FROM orders WHERE total_amount = '74420.82';,db.orders.find({total_amount: '74420.82'}),READ
+"Insert a new order with order_id as 96, customer_name as Tammy Gregory, product_name as Edward Rice","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (96, 'Tammy Gregory', 'Edward Rice', 444, '2023-08-12', 18537.93);","db.orders.insertOne({
+  ""order_id"": 96,
+  ""customer_name"": ""Tammy Gregory"",
+  ""product_name"": ""Edward Rice"",
+  ""quantity"": 444,
+  ""order_date"": ""2023-08-12"",
+  ""total_amount"": 18537.93
+})",CREATE
+Find projects where start_date contains person,SELECT * FROM projects WHERE start_date LIKE '%person%';,"db.projects.find({start_date: {$regex: 'person', $options: 'i'}})",READ
+Update orders set total_amount to 43612.02 where quantity is 8945,UPDATE orders SET total_amount = '43612.02' WHERE quantity = '8945';,"db.orders.updateMany({quantity: '8945'}, {$set: {total_amount: '43612.02'}})",UPDATE
+Count all orders,SELECT COUNT(*) FROM orders;,db.orders.countDocuments({}),READ
+Remove projects where project_name is Cynthia Cain,DELETE FROM projects WHERE project_name = 'Cynthia Cain';,db.projects.deleteMany({project_name: 'Cynthia Cain'}),DELETE
+"Insert a new product with product_id as 4445, product_name as April Palmer, category as Office Supplies","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (4445, 'April Palmer', 'Office Supplies', 20359.54, 3313, 'Martinez, Reeves and Cunningham');","db.products.insertOne({
+  ""product_id"": 4445,
+  ""product_name"": ""April Palmer"",
+  ""category"": ""Office Supplies"",
+  ""price"": 20359.54,
+  ""stock_quantity"": 3313,
+  ""supplier"": ""Martinez, Reeves and Cunningham""
+})",CREATE
+Get top 15 products ordered by product_name,SELECT * FROM products ORDER BY product_name DESC LIMIT 15;,db.products.find({}).sort({product_name: -1}).limit(15),READ
+Update orders set order_id to 2005 where product_name is Clifford Taylor,UPDATE orders SET order_id = '2005' WHERE product_name = 'Clifford Taylor';,"db.orders.updateMany({product_name: 'Clifford Taylor'}, {$set: {order_id: '2005'}})",UPDATE
+Remove products where price is 92437.82,DELETE FROM products WHERE price = '92437.82';,db.products.deleteMany({price: '92437.82'}),DELETE
+Update orders set quantity to 9896 where order_id is 8778,UPDATE orders SET quantity = '9896' WHERE order_id = '8778';,"db.orders.updateMany({order_id: '8778'}, {$set: {quantity: '9896'}})",UPDATE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+Remove products where stock_quantity is 4308,DELETE FROM products WHERE stock_quantity = '4308';,db.products.deleteMany({stock_quantity: '4308'}),DELETE
+"Insert a new department with department_id as 8729, department_name as Tracy Griffin, manager_id as 7294","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (8729, 'Tracy Griffin', 7294, 15218.49, 'Mcdonaldhaven');","db.departments.insertOne({
+  ""department_id"": 8729,
+  ""department_name"": ""Tracy Griffin"",
+  ""manager_id"": 7294,
+  ""budget"": 15218.49,
+  ""location"": ""Mcdonaldhaven""
+})",CREATE
+Increase total_amount by 3206 in orders where quantity equals 3599,UPDATE orders SET total_amount = total_amount + 3206 WHERE quantity = '3599';,"db.orders.updateMany({quantity: '3599'}, {$inc: {total_amount: 3206}})",UPDATE
+Find orders where product_name contains modern,SELECT * FROM orders WHERE product_name LIKE '%modern%';,"db.orders.find({product_name: {$regex: 'modern', $options: 'i'}})",READ
+Show orders with product_name greater than 26924,SELECT * FROM orders WHERE product_name > 26924;,db.orders.find({product_name: {$gt: 26924}}),READ
+Change email to idiaz@example.com for all employees,UPDATE employees SET email = 'idiaz@example.com';,"db.employees.updateMany({}, {$set: {email: 'idiaz@example.com'}})",UPDATE
+Get top 38 projects ordered by project_name,SELECT * FROM projects ORDER BY project_name DESC LIMIT 38;,db.projects.find({}).sort({project_name: -1}).limit(38),READ
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Update employees set name to Maria Carroll where name is Keith Swanson,UPDATE employees SET name = 'Maria Carroll' WHERE name = 'Keith Swanson';,"db.employees.updateMany({name: 'Keith Swanson'}, {$set: {name: 'Maria Carroll'}})",UPDATE
+Change age to 4514 for all employees,UPDATE employees SET age = '4514';,"db.employees.updateMany({}, {$set: {age: '4514'}})",UPDATE
+Update orders set customer_name to Jamie Johnson where quantity is 7614,UPDATE orders SET customer_name = 'Jamie Johnson' WHERE quantity = '7614';,"db.orders.updateMany({quantity: '7614'}, {$set: {customer_name: 'Jamie Johnson'}})",UPDATE
+Find departments where manager_id contains such,SELECT * FROM departments WHERE manager_id LIKE '%such%';,"db.departments.find({manager_id: {$regex: 'such', $options: 'i'}})",READ
+Update employees set name to Brendan Jackson where name is Guy Smith,UPDATE employees SET name = 'Brendan Jackson' WHERE name = 'Guy Smith';,"db.employees.updateMany({name: 'Guy Smith'}, {$set: {name: 'Brendan Jackson'}})",UPDATE
+"Insert a new project with project_id as 6802, project_name as Pedro Lawson, start_date as 2022-12-21","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (6802, 'Pedro Lawson', '2022-12-21', '2024-01-24', 13050.22, 'Active');","db.projects.insertOne({
+  ""project_id"": 6802,
+  ""project_name"": ""Pedro Lawson"",
+  ""start_date"": ""2022-12-21"",
+  ""end_date"": ""2024-01-24"",
+  ""budget"": 13050.22,
+  ""status"": ""Active""
+})",CREATE
+Show all employees,SELECT * FROM employees;,db.employees.find({}),READ
+Delete products with price less than 20286,DELETE FROM products WHERE price < 20286;,db.products.deleteMany({price: {$lt: 20286}}),DELETE
+Change manager_id to 4865 for all departments,UPDATE departments SET manager_id = '4865';,"db.departments.updateMany({}, {$set: {manager_id: '4865'}})",UPDATE
+Remove departments where manager_id is 3809,DELETE FROM departments WHERE manager_id = '3809';,db.departments.deleteMany({manager_id: '3809'}),DELETE
+Change hire_date to 2023-11-11 for all employees,UPDATE employees SET hire_date = '2023-11-11';,"db.employees.updateMany({}, {$set: {hire_date: '2023-11-11'}})",UPDATE
+Increase order_id by 4267 in orders where customer_name equals Andrew Murphy,UPDATE orders SET order_id = order_id + 4267 WHERE customer_name = 'Andrew Murphy';,"db.orders.updateMany({customer_name: 'Andrew Murphy'}, {$inc: {order_id: 4267}})",UPDATE
+Count all projects,SELECT COUNT(*) FROM projects;,db.projects.countDocuments({}),READ
+Delete products with price less than 23362,DELETE FROM products WHERE price < 23362;,db.products.deleteMany({price: {$lt: 23362}}),DELETE
+"Insert a new order with order_id as 6861, customer_name as Heather Griffin, product_name as Jeremy Deleon","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (6861, 'Heather Griffin', 'Jeremy Deleon', 7331, '2025-05-09', 79457.92);","db.orders.insertOne({
+  ""order_id"": 6861,
+  ""customer_name"": ""Heather Griffin"",
+  ""product_name"": ""Jeremy Deleon"",
+  ""quantity"": 7331,
+  ""order_date"": ""2025-05-09"",
+  ""total_amount"": 79457.92
+})",CREATE
+Get all order_id from orders,SELECT order_id FROM orders;,"db.orders.find({}, {order_id: 1})",READ
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+Update departments set location to Lauraberg where location is Schultzmouth,UPDATE departments SET location = 'Lauraberg' WHERE location = 'Schultzmouth';,"db.departments.updateMany({location: 'Schultzmouth'}, {$set: {location: 'Lauraberg'}})",UPDATE
+Get all quantity from orders,SELECT quantity FROM orders;,"db.orders.find({}, {quantity: 1})",READ
+"Insert a new employee with employee_id as 1204, name as David Price, email as katelynjackson@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (1204, 'David Price', 'katelynjackson@example.org', 'HR', 57203.04, '2024-01-10', 5027);","db.employees.insertOne({
+  ""employee_id"": 1204,
+  ""name"": ""David Price"",
+  ""email"": ""katelynjackson@example.org"",
+  ""department"": ""HR"",
+  ""salary"": 57203.04,
+  ""hire_date"": ""2024-01-10"",
+  ""age"": 5027
+})",CREATE
+Get top 17 departments ordered by manager_id,SELECT * FROM departments ORDER BY manager_id DESC LIMIT 17;,db.departments.find({}).sort({manager_id: -1}).limit(17),READ
+"Insert a new project with project_id as 1262, project_name as Paul Hicks, start_date as 2025-01-17","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (1262, 'Paul Hicks', '2025-01-17', '2025-10-21', 12464.5, 'Cancelled');","db.projects.insertOne({
+  ""project_id"": 1262,
+  ""project_name"": ""Paul Hicks"",
+  ""start_date"": ""2025-01-17"",
+  ""end_date"": ""2025-10-21"",
+  ""budget"": 12464.5,
+  ""status"": ""Cancelled""
+})",CREATE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+Change project_id to 9151 for all projects,UPDATE projects SET project_id = '9151';,"db.projects.updateMany({}, {$set: {project_id: '9151'}})",UPDATE
+Remove products where product_id is 7824,DELETE FROM products WHERE product_id = '7824';,db.products.deleteMany({product_id: '7824'}),DELETE
+"Update products set category to Electronics where supplier is White, Weber and Graham","UPDATE products SET category = 'Electronics' WHERE supplier = 'White, Weber and Graham';","db.products.updateMany({supplier: 'White, Weber and Graham'}, {$set: {category: 'Electronics'}})",UPDATE
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+"Insert a new product with product_id as 7642, product_name as Andrea Moore, category as Office Supplies","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (7642, 'Andrea Moore', 'Office Supplies', 92945.5, 2275, 'Hall LLC');","db.products.insertOne({
+  ""product_id"": 7642,
+  ""product_name"": ""Andrea Moore"",
+  ""category"": ""Office Supplies"",
+  ""price"": 92945.5,
+  ""stock_quantity"": 2275,
+  ""supplier"": ""Hall LLC""
+})",CREATE
+Update orders set order_id to 2117 where order_id is 5288,UPDATE orders SET order_id = '2117' WHERE order_id = '5288';,"db.orders.updateMany({order_id: '5288'}, {$set: {order_id: '2117'}})",UPDATE
+Find products where product_name is David Roman,SELECT * FROM products WHERE product_name = 'David Roman';,db.products.find({product_name: 'David Roman'}),READ
+"Insert a new project with project_id as 7859, project_name as Shelley Flowers, start_date as 2021-10-16","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (7859, 'Shelley Flowers', '2021-10-16', '2025-11-26', 16666.08, 'Completed');","db.projects.insertOne({
+  ""project_id"": 7859,
+  ""project_name"": ""Shelley Flowers"",
+  ""start_date"": ""2021-10-16"",
+  ""end_date"": ""2025-11-26"",
+  ""budget"": 16666.08,
+  ""status"": ""Completed""
+})",CREATE
+Increase order_id by 1861 in orders where order_date equals 2022-03-14,UPDATE orders SET order_id = order_id + 1861 WHERE order_date = '2022-03-14';,"db.orders.updateMany({order_date: '2022-03-14'}, {$inc: {order_id: 1861}})",UPDATE
+Find projects where budget contains break,SELECT * FROM projects WHERE budget LIKE '%break%';,"db.projects.find({budget: {$regex: 'break', $options: 'i'}})",READ
+Show average total_amount from orders,SELECT AVG(total_amount) FROM orders;,"db.orders.aggregate([{$group: {_id: null, avg: {$avg: '$total_amount'}}}])",READ
+Change project_id to 680 for all projects,UPDATE projects SET project_id = '680';,"db.projects.updateMany({}, {$set: {project_id: '680'}})",UPDATE
+Remove products where stock_quantity is 5913,DELETE FROM products WHERE stock_quantity = '5913';,db.products.deleteMany({stock_quantity: '5913'}),DELETE
+"Insert a new department with department_id as 9006, department_name as Kristi Rivera, manager_id as 8414","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (9006, 'Kristi Rivera', 8414, 52470.18, 'Robinsonside');","db.departments.insertOne({
+  ""department_id"": 9006,
+  ""department_name"": ""Kristi Rivera"",
+  ""manager_id"": 8414,
+  ""budget"": 52470.18,
+  ""location"": ""Robinsonside""
+})",CREATE
+Update products set product_name to Cindy Alvarez where supplier is Smith-Nguyen,UPDATE products SET product_name = 'Cindy Alvarez' WHERE supplier = 'Smith-Nguyen';,"db.products.updateMany({supplier: 'Smith-Nguyen'}, {$set: {product_name: 'Cindy Alvarez'}})",UPDATE
+"Insert a new project with project_id as 408, project_name as Melissa Nelson, start_date as 2021-09-16","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (408, 'Melissa Nelson', '2021-09-16', '2022-11-22', 38421.09, 'Completed');","db.projects.insertOne({
+  ""project_id"": 408,
+  ""project_name"": ""Melissa Nelson"",
+  ""start_date"": ""2021-09-16"",
+  ""end_date"": ""2022-11-22"",
+  ""budget"": 38421.09,
+  ""status"": ""Completed""
+})",CREATE
+"Insert a new order with order_id as 7436, customer_name as Michael Campbell, product_name as Dalton Stewart","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (7436, 'Michael Campbell', 'Dalton Stewart', 3643, '2023-03-27', 33738.4);","db.orders.insertOne({
+  ""order_id"": 7436,
+  ""customer_name"": ""Michael Campbell"",
+  ""product_name"": ""Dalton Stewart"",
+  ""quantity"": 3643,
+  ""order_date"": ""2023-03-27"",
+  ""total_amount"": 33738.4
+})",CREATE
+Show all products,SELECT * FROM products;,db.products.find({}),READ
+Change budget to 3034.65 for all projects,UPDATE projects SET budget = '3034.65';,"db.projects.updateMany({}, {$set: {budget: '3034.65'}})",UPDATE
+"Insert a new department with department_id as 3879, department_name as Andrew Hanson, manager_id as 1646","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (3879, 'Andrew Hanson', 1646, 97346.46, 'Jacksonhaven');","db.departments.insertOne({
+  ""department_id"": 3879,
+  ""department_name"": ""Andrew Hanson"",
+  ""manager_id"": 1646,
+  ""budget"": 97346.46,
+  ""location"": ""Jacksonhaven""
+})",CREATE
+"Insert a new order with order_id as 2532, customer_name as Amy Craig, product_name as Monica Oliver","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2532, 'Amy Craig', 'Monica Oliver', 6594, '2025-04-14', 87723.47);","db.orders.insertOne({
+  ""order_id"": 2532,
+  ""customer_name"": ""Amy Craig"",
+  ""product_name"": ""Monica Oliver"",
+  ""quantity"": 6594,
+  ""order_date"": ""2025-04-14"",
+  ""total_amount"": 87723.47
+})",CREATE
+Show average employee_id from employees,SELECT AVG(employee_id) FROM employees;,"db.employees.aggregate([{$group: {_id: null, avg: {$avg: '$employee_id'}}}])",READ
+Change order_date to 2021-08-31 for all orders,UPDATE orders SET order_date = '2021-08-31';,"db.orders.updateMany({}, {$set: {order_date: '2021-08-31'}})",UPDATE
+"Insert a new employee with employee_id as 6248, name as Carol Bennett, email as samantha64@example.net","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (6248, 'Carol Bennett', 'samantha64@example.net', 'Operations', 43751.84, '2021-12-11', 7689);","db.employees.insertOne({
+  ""employee_id"": 6248,
+  ""name"": ""Carol Bennett"",
+  ""email"": ""samantha64@example.net"",
+  ""department"": ""Operations"",
+  ""salary"": 43751.84,
+  ""hire_date"": ""2021-12-11"",
+  ""age"": 7689
+})",CREATE
+Increase project_id by 2722 in projects where start_date equals 2023-06-23,UPDATE projects SET project_id = project_id + 2722 WHERE start_date = '2023-06-23';,"db.projects.updateMany({start_date: '2023-06-23'}, {$inc: {project_id: 2722}})",UPDATE
+Show average quantity from orders,SELECT AVG(quantity) FROM orders;,"db.orders.aggregate([{$group: {_id: null, avg: {$avg: '$quantity'}}}])",READ
+"Insert a new employee with employee_id as 5024, name as Katherine Harvey, email as wellsmatthew@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5024, 'Katherine Harvey', 'wellsmatthew@example.org', 'Marketing', 9170.69, '2025-07-17', 4598);","db.employees.insertOne({
+  ""employee_id"": 5024,
+  ""name"": ""Katherine Harvey"",
+  ""email"": ""wellsmatthew@example.org"",
+  ""department"": ""Marketing"",
+  ""salary"": 9170.69,
+  ""hire_date"": ""2025-07-17"",
+  ""age"": 4598
+})",CREATE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+"Increase product_id by 3586 in products where supplier equals Kennedy, Wolf and Smith","UPDATE products SET product_id = product_id + 3586 WHERE supplier = 'Kennedy, Wolf and Smith';","db.products.updateMany({supplier: 'Kennedy, Wolf and Smith'}, {$inc: {product_id: 3586}})",UPDATE
+Remove orders where quantity is 4109,DELETE FROM orders WHERE quantity = '4109';,db.orders.deleteMany({quantity: '4109'}),DELETE
+Remove departments where budget is 20805.38,DELETE FROM departments WHERE budget = '20805.38';,db.departments.deleteMany({budget: '20805.38'}),DELETE
+Delete products with stock_quantity less than 4805,DELETE FROM products WHERE stock_quantity < 4805;,db.products.deleteMany({stock_quantity: {$lt: 4805}}),DELETE
+Increase budget by 1851 in projects where end_date equals 2023-06-07,UPDATE projects SET budget = budget + 1851 WHERE end_date = '2023-06-07';,"db.projects.updateMany({end_date: '2023-06-07'}, {$inc: {budget: 1851}})",UPDATE
+Delete all departments,DELETE FROM departments;,db.departments.deleteMany({}),DELETE
+Remove employees where employee_id is 9683,DELETE FROM employees WHERE employee_id = '9683';,db.employees.deleteMany({employee_id: '9683'}),DELETE
+"Insert a new project with project_id as 189, project_name as Anthony Scott, start_date as 2025-09-29","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (189, 'Anthony Scott', '2025-09-29', '2021-11-12', 28530.39, 'Pending');","db.projects.insertOne({
+  ""project_id"": 189,
+  ""project_name"": ""Anthony Scott"",
+  ""start_date"": ""2025-09-29"",
+  ""end_date"": ""2021-11-12"",
+  ""budget"": 28530.39,
+  ""status"": ""Pending""
+})",CREATE
+Update orders set order_date to 2021-12-13 where quantity is 8158,UPDATE orders SET order_date = '2021-12-13' WHERE quantity = '8158';,"db.orders.updateMany({quantity: '8158'}, {$set: {order_date: '2021-12-13'}})",UPDATE
+"Insert a new employee with employee_id as 774, name as Richard Lee, email as obryant@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (774, 'Richard Lee', 'obryant@example.com', 'Finance', 24287.93, '2024-11-22', 6210);","db.employees.insertOne({
+  ""employee_id"": 774,
+  ""name"": ""Richard Lee"",
+  ""email"": ""obryant@example.com"",
+  ""department"": ""Finance"",
+  ""salary"": 24287.93,
+  ""hire_date"": ""2024-11-22"",
+  ""age"": 6210
+})",CREATE
+Update departments set budget to 15969.99 where budget is 96987.27,UPDATE departments SET budget = '15969.99' WHERE budget = '96987.27';,"db.departments.updateMany({budget: '96987.27'}, {$set: {budget: '15969.99'}})",UPDATE
+Increase age by 2860 in employees where email equals russell29@example.com,UPDATE employees SET age = age + 2860 WHERE email = 'russell29@example.com';,"db.employees.updateMany({email: 'russell29@example.com'}, {$inc: {age: 2860}})",UPDATE
+Remove departments where department_id is 96,DELETE FROM departments WHERE department_id = '96';,db.departments.deleteMany({department_id: '96'}),DELETE
+"Insert a new project with project_id as 6904, project_name as Tracy Curtis, start_date as 2024-04-09","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (6904, 'Tracy Curtis', '2024-04-09', '2025-03-24', 45948.04, 'Pending');","db.projects.insertOne({
+  ""project_id"": 6904,
+  ""project_name"": ""Tracy Curtis"",
+  ""start_date"": ""2024-04-09"",
+  ""end_date"": ""2025-03-24"",
+  ""budget"": 45948.04,
+  ""status"": ""Pending""
+})",CREATE
+Delete all employees,DELETE FROM employees;,db.employees.deleteMany({}),DELETE
+Update projects set budget to 25609.94 where start_date is 2022-12-25,UPDATE projects SET budget = '25609.94' WHERE start_date = '2022-12-25';,"db.projects.updateMany({start_date: '2022-12-25'}, {$set: {budget: '25609.94'}})",UPDATE
+"Insert a new employee with employee_id as 4058, name as Jack Moreno, email as michelle65@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (4058, 'Jack Moreno', 'michelle65@example.com', 'Engineering', 71152.14, '2021-06-18', 7180);","db.employees.insertOne({
+  ""employee_id"": 4058,
+  ""name"": ""Jack Moreno"",
+  ""email"": ""michelle65@example.com"",
+  ""department"": ""Engineering"",
+  ""salary"": 71152.14,
+  ""hire_date"": ""2021-06-18"",
+  ""age"": 7180
+})",CREATE
+"Insert a new department with department_id as 7645, department_name as Virginia Delgado, manager_id as 8499","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (7645, 'Virginia Delgado', 8499, 63577.49, 'East Audreymouth');","db.departments.insertOne({
+  ""department_id"": 7645,
+  ""department_name"": ""Virginia Delgado"",
+  ""manager_id"": 8499,
+  ""budget"": 63577.49,
+  ""location"": ""East Audreymouth""
+})",CREATE
+Remove employees where department is Operations,DELETE FROM employees WHERE department = 'Operations';,db.employees.deleteMany({department: 'Operations'}),DELETE
+Find projects where project_id is 3215,SELECT * FROM projects WHERE project_id = '3215';,db.projects.find({project_id: '3215'}),READ
+Change product_name to Johnny Brown for all orders,UPDATE orders SET product_name = 'Johnny Brown';,"db.orders.updateMany({}, {$set: {product_name: 'Johnny Brown'}})",UPDATE
+Update projects set budget to 9532.79 where project_id is 2131,UPDATE projects SET budget = '9532.79' WHERE project_id = '2131';,"db.projects.updateMany({project_id: '2131'}, {$set: {budget: '9532.79'}})",UPDATE
+Change name to Laura Barrett for all employees,UPDATE employees SET name = 'Laura Barrett';,"db.employees.updateMany({}, {$set: {name: 'Laura Barrett'}})",UPDATE
+Change status to Active for all projects,UPDATE projects SET status = 'Active';,"db.projects.updateMany({}, {$set: {status: 'Active'}})",UPDATE
+Delete departments with budget less than 25982,DELETE FROM departments WHERE budget < 25982;,db.departments.deleteMany({budget: {$lt: 25982}}),DELETE
+"Insert a new department with department_id as 1696, department_name as Mark Smith, manager_id as 4342","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (1696, 'Mark Smith', 4342, 58277.62, 'Tammyborough');","db.departments.insertOne({
+  ""department_id"": 1696,
+  ""department_name"": ""Mark Smith"",
+  ""manager_id"": 4342,
+  ""budget"": 58277.62,
+  ""location"": ""Tammyborough""
+})",CREATE
+Update products set stock_quantity to 6718 where stock_quantity is 8561,UPDATE products SET stock_quantity = '6718' WHERE stock_quantity = '8561';,"db.products.updateMany({stock_quantity: '8561'}, {$set: {stock_quantity: '6718'}})",UPDATE
+Change stock_quantity to 2523 for all products,UPDATE products SET stock_quantity = '2523';,"db.products.updateMany({}, {$set: {stock_quantity: '2523'}})",UPDATE
+"Insert a new product with product_id as 280, product_name as Sean Rogers, category as Hardware","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (280, 'Sean Rogers', 'Hardware', 51489.47, 3288, 'White, Watkins and Rodriguez');","db.products.insertOne({
+  ""product_id"": 280,
+  ""product_name"": ""Sean Rogers"",
+  ""category"": ""Hardware"",
+  ""price"": 51489.47,
+  ""stock_quantity"": 3288,
+  ""supplier"": ""White, Watkins and Rodriguez""
+})",CREATE
+Update products set category to Furniture where stock_quantity is 9590,UPDATE products SET category = 'Furniture' WHERE stock_quantity = '9590';,"db.products.updateMany({stock_quantity: '9590'}, {$set: {category: 'Furniture'}})",UPDATE
+"Insert a new product with product_id as 6087, product_name as Jade Campbell, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6087, 'Jade Campbell', 'Electronics', 10330.51, 1831, 'Brown, Manning and Guzman');","db.products.insertOne({
+  ""product_id"": 6087,
+  ""product_name"": ""Jade Campbell"",
+  ""category"": ""Electronics"",
+  ""price"": 10330.51,
+  ""stock_quantity"": 1831,
+  ""supplier"": ""Brown, Manning and Guzman""
+})",CREATE
+Remove projects where start_date is 2023-12-25,DELETE FROM projects WHERE start_date = '2023-12-25';,db.projects.deleteMany({start_date: '2023-12-25'}),DELETE
+"Increase stock_quantity by 3196 in products where supplier equals Thomas, Ward and Bryant","UPDATE products SET stock_quantity = stock_quantity + 3196 WHERE supplier = 'Thomas, Ward and Bryant';","db.products.updateMany({supplier: 'Thomas, Ward and Bryant'}, {$inc: {stock_quantity: 3196}})",UPDATE
+Find orders where product_name contains space,SELECT * FROM orders WHERE product_name LIKE '%space%';,"db.orders.find({product_name: {$regex: 'space', $options: 'i'}})",READ
+Get all hire_date from employees,SELECT hire_date FROM employees;,"db.employees.find({}, {hire_date: 1})",READ
+"Insert a new product with product_id as 4971, product_name as Justin Frank, category as Furniture","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (4971, 'Justin Frank', 'Furniture', 27366.22, 5694, 'Wilkinson LLC');","db.products.insertOne({
+  ""product_id"": 4971,
+  ""product_name"": ""Justin Frank"",
+  ""category"": ""Furniture"",
+  ""price"": 27366.22,
+  ""stock_quantity"": 5694,
+  ""supplier"": ""Wilkinson LLC""
+})",CREATE
+Delete departments with manager_id less than 17048,DELETE FROM departments WHERE manager_id < 17048;,db.departments.deleteMany({manager_id: {$lt: 17048}}),DELETE
+Increase department_id by 3944 in departments where location equals North Anthony,UPDATE departments SET department_id = department_id + 3944 WHERE location = 'North Anthony';,"db.departments.updateMany({location: 'North Anthony'}, {$inc: {department_id: 3944}})",UPDATE
+"Insert a new project with project_id as 5110, project_name as Megan Powell, start_date as 2023-07-08","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (5110, 'Megan Powell', '2023-07-08', '2025-07-24', 34192.69, 'Pending');","db.projects.insertOne({
+  ""project_id"": 5110,
+  ""project_name"": ""Megan Powell"",
+  ""start_date"": ""2023-07-08"",
+  ""end_date"": ""2025-07-24"",
+  ""budget"": 34192.69,
+  ""status"": ""Pending""
+})",CREATE
+"Insert a new product with product_id as 9649, product_name as Linda Fleming, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (9649, 'Linda Fleming', 'Electronics', 45136.09, 329, 'Steele-Rodriguez');","db.products.insertOne({
+  ""product_id"": 9649,
+  ""product_name"": ""Linda Fleming"",
+  ""category"": ""Electronics"",
+  ""price"": 45136.09,
+  ""stock_quantity"": 329,
+  ""supplier"": ""Steele-Rodriguez""
+})",CREATE
+Change employee_id to 1861 for all employees,UPDATE employees SET employee_id = '1861';,"db.employees.updateMany({}, {$set: {employee_id: '1861'}})",UPDATE
+Increase employee_id by 870 in employees where age equals 5412,UPDATE employees SET employee_id = employee_id + 870 WHERE age = '5412';,"db.employees.updateMany({age: '5412'}, {$inc: {employee_id: 870}})",UPDATE
+Update products set category to Hardware where product_id is 8048,UPDATE products SET category = 'Hardware' WHERE product_id = '8048';,"db.products.updateMany({product_id: '8048'}, {$set: {category: 'Hardware'}})",UPDATE
+"Insert a new project with project_id as 7118, project_name as Blake Wong, start_date as 2025-01-26","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (7118, 'Blake Wong', '2025-01-26', '2023-12-11', 96730.81, 'Cancelled');","db.projects.insertOne({
+  ""project_id"": 7118,
+  ""project_name"": ""Blake Wong"",
+  ""start_date"": ""2025-01-26"",
+  ""end_date"": ""2023-12-11"",
+  ""budget"": 96730.81,
+  ""status"": ""Cancelled""
+})",CREATE
+"Insert a new product with product_id as 5252, product_name as Kelly Nguyen, category as Hardware","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (5252, 'Kelly Nguyen', 'Hardware', 23820.41, 2547, 'Moore and Sons');","db.products.insertOne({
+  ""product_id"": 5252,
+  ""product_name"": ""Kelly Nguyen"",
+  ""category"": ""Hardware"",
+  ""price"": 23820.41,
+  ""stock_quantity"": 2547,
+  ""supplier"": ""Moore and Sons""
+})",CREATE
+Count all employees,SELECT COUNT(*) FROM employees;,db.employees.countDocuments({}),READ
+Remove orders where order_id is 958,DELETE FROM orders WHERE order_id = '958';,db.orders.deleteMany({order_id: '958'}),DELETE
+"Insert a new order with order_id as 2327, customer_name as Anthony Hoffman, product_name as Stephanie Gray","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2327, 'Anthony Hoffman', 'Stephanie Gray', 8358, '2021-05-18', 70496.51);","db.orders.insertOne({
+  ""order_id"": 2327,
+  ""customer_name"": ""Anthony Hoffman"",
+  ""product_name"": ""Stephanie Gray"",
+  ""quantity"": 8358,
+  ""order_date"": ""2021-05-18"",
+  ""total_amount"": 70496.51
+})",CREATE
+Change budget to 74904.03 for all projects,UPDATE projects SET budget = '74904.03';,"db.projects.updateMany({}, {$set: {budget: '74904.03'}})",UPDATE
+Remove products where product_name is Kimberly Porter,DELETE FROM products WHERE product_name = 'Kimberly Porter';,db.products.deleteMany({product_name: 'Kimberly Porter'}),DELETE
+Change product_name to Amy Hill for all orders,UPDATE orders SET product_name = 'Amy Hill';,"db.orders.updateMany({}, {$set: {product_name: 'Amy Hill'}})",UPDATE
+Remove departments where budget is 59272.45,DELETE FROM departments WHERE budget = '59272.45';,db.departments.deleteMany({budget: '59272.45'}),DELETE
+Get top 25 orders ordered by order_id,SELECT * FROM orders ORDER BY order_id DESC LIMIT 25;,db.orders.find({}).sort({order_id: -1}).limit(25),READ
+"Insert a new department with department_id as 7065, department_name as Timothy Savage Jr., manager_id as 4306","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (7065, 'Timothy Savage Jr.', 4306, 79146.6, 'Camachoville');","db.departments.insertOne({
+  ""department_id"": 7065,
+  ""department_name"": ""Timothy Savage Jr."",
+  ""manager_id"": 4306,
+  ""budget"": 79146.6,
+  ""location"": ""Camachoville""
+})",CREATE
+"Insert a new department with department_id as 4442, department_name as Nathaniel Duke, manager_id as 7406","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (4442, 'Nathaniel Duke', 7406, 13113.42, 'Bryanmouth');","db.departments.insertOne({
+  ""department_id"": 4442,
+  ""department_name"": ""Nathaniel Duke"",
+  ""manager_id"": 7406,
+  ""budget"": 13113.42,
+  ""location"": ""Bryanmouth""
+})",CREATE
+Change budget to 17730.79 for all projects,UPDATE projects SET budget = '17730.79';,"db.projects.updateMany({}, {$set: {budget: '17730.79'}})",UPDATE
+Get top 36 projects ordered by end_date,SELECT * FROM projects ORDER BY end_date DESC LIMIT 36;,db.projects.find({}).sort({end_date: -1}).limit(36),READ
+Remove products where price is 95157.95,DELETE FROM products WHERE price = '95157.95';,db.products.deleteMany({price: '95157.95'}),DELETE
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+"Insert a new order with order_id as 9097, customer_name as Jerry Yang, product_name as Shelia Patton","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (9097, 'Jerry Yang', 'Shelia Patton', 1109, '2025-01-08', 47229.38);","db.orders.insertOne({
+  ""order_id"": 9097,
+  ""customer_name"": ""Jerry Yang"",
+  ""product_name"": ""Shelia Patton"",
+  ""quantity"": 1109,
+  ""order_date"": ""2025-01-08"",
+  ""total_amount"": 47229.38
+})",CREATE
+Show average department_id from departments,SELECT AVG(department_id) FROM departments;,"db.departments.aggregate([{$group: {_id: null, avg: {$avg: '$department_id'}}}])",READ
+Show all products,SELECT * FROM products;,db.products.find({}),READ
+"Insert a new order with order_id as 727, customer_name as Anthony Phillips, product_name as Jennifer Jones","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (727, 'Anthony Phillips', 'Jennifer Jones', 8476, '2025-12-14', 48119.91);","db.orders.insertOne({
+  ""order_id"": 727,
+  ""customer_name"": ""Anthony Phillips"",
+  ""product_name"": ""Jennifer Jones"",
+  ""quantity"": 8476,
+  ""order_date"": ""2025-12-14"",
+  ""total_amount"": 48119.91
+})",CREATE
+"Insert a new employee with employee_id as 5019, name as Shannon Kelly, email as fmullins@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5019, 'Shannon Kelly', 'fmullins@example.com', 'Operations', 52312.67, '2021-12-15', 6464);","db.employees.insertOne({
+  ""employee_id"": 5019,
+  ""name"": ""Shannon Kelly"",
+  ""email"": ""fmullins@example.com"",
+  ""department"": ""Operations"",
+  ""salary"": 52312.67,
+  ""hire_date"": ""2021-12-15"",
+  ""age"": 6464
+})",CREATE
+Increase product_id by 1680 in products where category equals Software,UPDATE products SET product_id = product_id + 1680 WHERE category = 'Software';,"db.products.updateMany({category: 'Software'}, {$inc: {product_id: 1680}})",UPDATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Count all departments,SELECT COUNT(*) FROM departments;,db.departments.countDocuments({}),READ
+Find orders where total_amount contains create,SELECT * FROM orders WHERE total_amount LIKE '%create%';,"db.orders.find({total_amount: {$regex: 'create', $options: 'i'}})",READ
+Increase total_amount by 1098 in orders where customer_name equals Cynthia Burke,UPDATE orders SET total_amount = total_amount + 1098 WHERE customer_name = 'Cynthia Burke';,"db.orders.updateMany({customer_name: 'Cynthia Burke'}, {$inc: {total_amount: 1098}})",UPDATE
+Delete all departments,DELETE FROM departments;,db.departments.deleteMany({}),DELETE
+Remove employees where salary is 31414.9,DELETE FROM employees WHERE salary = '31414.9';,db.employees.deleteMany({salary: '31414.9'}),DELETE
+Show all products,SELECT * FROM products;,db.products.find({}),READ
+Delete departments with budget less than 20900,DELETE FROM departments WHERE budget < 20900;,db.departments.deleteMany({budget: {$lt: 20900}}),DELETE
+Find employees where department contains total,SELECT * FROM employees WHERE department LIKE '%total%';,"db.employees.find({department: {$regex: 'total', $options: 'i'}})",READ
+Remove orders where quantity is 7970,DELETE FROM orders WHERE quantity = '7970';,db.orders.deleteMany({quantity: '7970'}),DELETE
+Change project_id to 9778 for all projects,UPDATE projects SET project_id = '9778';,"db.projects.updateMany({}, {$set: {project_id: '9778'}})",UPDATE
+Remove employees where age is 1300,DELETE FROM employees WHERE age = '1300';,db.employees.deleteMany({age: '1300'}),DELETE
+Update orders set total_amount to 57528.88 where order_date is 2025-12-01,UPDATE orders SET total_amount = '57528.88' WHERE order_date = '2025-12-01';,"db.orders.updateMany({order_date: '2025-12-01'}, {$set: {total_amount: '57528.88'}})",UPDATE
+Delete orders with order_id less than 34771,DELETE FROM orders WHERE order_id < 34771;,db.orders.deleteMany({order_id: {$lt: 34771}}),DELETE
+Count all departments,SELECT COUNT(*) FROM departments;,db.departments.countDocuments({}),READ
+"Change supplier to Bush, Estrada and Monroe for all products","UPDATE products SET supplier = 'Bush, Estrada and Monroe';","db.products.updateMany({}, {$set: {supplier: 'Bush, Estrada and Monroe'}})",UPDATE
+"Insert a new employee with employee_id as 4601, name as Craig Rose, email as cookjames@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (4601, 'Craig Rose', 'cookjames@example.org', 'Marketing', 22152.98, '2025-08-28', 2528);","db.employees.insertOne({
+  ""employee_id"": 4601,
+  ""name"": ""Craig Rose"",
+  ""email"": ""cookjames@example.org"",
+  ""department"": ""Marketing"",
+  ""salary"": 22152.98,
+  ""hire_date"": ""2025-08-28"",
+  ""age"": 2528
+})",CREATE
+Update products set product_name to Lisa Gordon where product_name is Theresa Lopez MD,UPDATE products SET product_name = 'Lisa Gordon' WHERE product_name = 'Theresa Lopez MD';,"db.products.updateMany({product_name: 'Theresa Lopez MD'}, {$set: {product_name: 'Lisa Gordon'}})",UPDATE
+"Insert a new project with project_id as 1638, project_name as Francisco Martinez, start_date as 2022-12-04","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (1638, 'Francisco Martinez', '2022-12-04', '2023-07-16', 89687.77, 'Completed');","db.projects.insertOne({
+  ""project_id"": 1638,
+  ""project_name"": ""Francisco Martinez"",
+  ""start_date"": ""2022-12-04"",
+  ""end_date"": ""2023-07-16"",
+  ""budget"": 89687.77,
+  ""status"": ""Completed""
+})",CREATE
+Get top 42 departments ordered by department_id,SELECT * FROM departments ORDER BY department_id DESC LIMIT 42;,db.departments.find({}).sort({department_id: -1}).limit(42),READ
+Show departments with department_name greater than 5964,SELECT * FROM departments WHERE department_name > 5964;,db.departments.find({department_name: {$gt: 5964}}),READ
+Change start_date to 2023-08-10 for all projects,UPDATE projects SET start_date = '2023-08-10';,"db.projects.updateMany({}, {$set: {start_date: '2023-08-10'}})",UPDATE
+Change budget to 52516.21 for all departments,UPDATE departments SET budget = '52516.21';,"db.departments.updateMany({}, {$set: {budget: '52516.21'}})",UPDATE
+Remove departments where department_name is Daniel Johnson,DELETE FROM departments WHERE department_name = 'Daniel Johnson';,db.departments.deleteMany({department_name: 'Daniel Johnson'}),DELETE
+"Insert a new department with department_id as 6491, department_name as Dennis Meyers, manager_id as 2729","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (6491, 'Dennis Meyers', 2729, 70380.4, 'East Steven');","db.departments.insertOne({
+  ""department_id"": 6491,
+  ""department_name"": ""Dennis Meyers"",
+  ""manager_id"": 2729,
+  ""budget"": 70380.4,
+  ""location"": ""East Steven""
+})",CREATE
+Delete all departments,DELETE FROM departments;,db.departments.deleteMany({}),DELETE
+Find orders where product_name is Amy Webster,SELECT * FROM orders WHERE product_name = 'Amy Webster';,db.orders.find({product_name: 'Amy Webster'}),READ
+Change department to Marketing for all employees,UPDATE employees SET department = 'Marketing';,"db.employees.updateMany({}, {$set: {department: 'Marketing'}})",UPDATE
+Increase employee_id by 2797 in employees where name equals Joseph Marshall,UPDATE employees SET employee_id = employee_id + 2797 WHERE name = 'Joseph Marshall';,"db.employees.updateMany({name: 'Joseph Marshall'}, {$inc: {employee_id: 2797}})",UPDATE
+Delete all departments,DELETE FROM departments;,db.departments.deleteMany({}),DELETE
+Get top 47 departments ordered by manager_id,SELECT * FROM departments ORDER BY manager_id DESC LIMIT 47;,db.departments.find({}).sort({manager_id: -1}).limit(47),READ
+"Insert a new employee with employee_id as 8038, name as Ashley Mclean, email as vdavis@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (8038, 'Ashley Mclean', 'vdavis@example.org', 'Engineering', 22798.64, '2024-03-23', 3552);","db.employees.insertOne({
+  ""employee_id"": 8038,
+  ""name"": ""Ashley Mclean"",
+  ""email"": ""vdavis@example.org"",
+  ""department"": ""Engineering"",
+  ""salary"": 22798.64,
+  ""hire_date"": ""2024-03-23"",
+  ""age"": 3552
+})",CREATE
+Delete all employees,DELETE FROM employees;,db.employees.deleteMany({}),DELETE
+"Insert a new project with project_id as 2972, project_name as Mr. Charles Harrell, start_date as 2021-07-19","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (2972, 'Mr. Charles Harrell', '2021-07-19', '2022-05-17', 18546.01, 'Completed');","db.projects.insertOne({
+  ""project_id"": 2972,
+  ""project_name"": ""Mr. Charles Harrell"",
+  ""start_date"": ""2021-07-19"",
+  ""end_date"": ""2022-05-17"",
+  ""budget"": 18546.01,
+  ""status"": ""Completed""
+})",CREATE
+Remove products where stock_quantity is 9810,DELETE FROM products WHERE stock_quantity = '9810';,db.products.deleteMany({stock_quantity: '9810'}),DELETE
+Remove projects where project_name is Mr. James Carter,DELETE FROM projects WHERE project_name = 'Mr. James Carter';,db.projects.deleteMany({project_name: 'Mr. James Carter'}),DELETE
+Remove products where category is Hardware,DELETE FROM products WHERE category = 'Hardware';,db.products.deleteMany({category: 'Hardware'}),DELETE
+Remove products where product_name is Jack Doyle,DELETE FROM products WHERE product_name = 'Jack Doyle';,db.products.deleteMany({product_name: 'Jack Doyle'}),DELETE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ
+"Insert a new product with product_id as 8392, product_name as Jessica Reilly, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (8392, 'Jessica Reilly', 'Electronics', 8014.31, 3659, 'Spencer Ltd');","db.products.insertOne({
+  ""product_id"": 8392,
+  ""product_name"": ""Jessica Reilly"",
+  ""category"": ""Electronics"",
+  ""price"": 8014.31,
+  ""stock_quantity"": 3659,
+  ""supplier"": ""Spencer Ltd""
+})",CREATE
+Delete all orders,DELETE FROM orders;,db.orders.deleteMany({}),DELETE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+Find employees where employee_id is 7655,SELECT * FROM employees WHERE employee_id = '7655';,db.employees.find({employee_id: '7655'}),READ
+"Insert a new employee with employee_id as 803, name as Cynthia Price, email as choover@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (803, 'Cynthia Price', 'choover@example.org', 'Finance', 94485.84, '2024-08-10', 6872);","db.employees.insertOne({
+  ""employee_id"": 803,
+  ""name"": ""Cynthia Price"",
+  ""email"": ""choover@example.org"",
+  ""department"": ""Finance"",
+  ""salary"": 94485.84,
+  ""hire_date"": ""2024-08-10"",
+  ""age"": 6872
+})",CREATE
+Change order_id to 9902 for all orders,UPDATE orders SET order_id = '9902';,"db.orders.updateMany({}, {$set: {order_id: '9902'}})",UPDATE
+"Insert a new employee with employee_id as 5924, name as Scott Barrett, email as ugilbert@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5924, 'Scott Barrett', 'ugilbert@example.com', 'Engineering', 96416.14, '2023-02-02', 2943);","db.employees.insertOne({
+  ""employee_id"": 5924,
+  ""name"": ""Scott Barrett"",
+  ""email"": ""ugilbert@example.com"",
+  ""department"": ""Engineering"",
+  ""salary"": 96416.14,
+  ""hire_date"": ""2023-02-02"",
+  ""age"": 2943
+})",CREATE
+"Insert a new employee with employee_id as 1429, name as Denise Newman, email as carterhoward@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (1429, 'Denise Newman', 'carterhoward@example.org', 'HR', 56172.21, '2022-01-06', 4700);","db.employees.insertOne({
+  ""employee_id"": 1429,
+  ""name"": ""Denise Newman"",
+  ""email"": ""carterhoward@example.org"",
+  ""department"": ""HR"",
+  ""salary"": 56172.21,
+  ""hire_date"": ""2022-01-06"",
+  ""age"": 4700
+})",CREATE
+Show projects with budget greater than 78656,SELECT * FROM projects WHERE budget > 78656;,db.projects.find({budget: {$gt: 78656}}),READ
+"Insert a new department with department_id as 6428, department_name as Jason Nguyen, manager_id as 8239","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (6428, 'Jason Nguyen', 8239, 17806.21, 'Kristenberg');","db.departments.insertOne({
+  ""department_id"": 6428,
+  ""department_name"": ""Jason Nguyen"",
+  ""manager_id"": 8239,
+  ""budget"": 17806.21,
+  ""location"": ""Kristenberg""
+})",CREATE
+Show all employees,SELECT * FROM employees;,db.employees.find({}),READ
+Show projects with status greater than 53298,SELECT * FROM projects WHERE status > 53298;,db.projects.find({status: {$gt: 53298}}),READ
+Get top 20 products ordered by stock_quantity,SELECT * FROM products ORDER BY stock_quantity DESC LIMIT 20;,db.products.find({}).sort({stock_quantity: -1}).limit(20),READ
+"Insert a new employee with employee_id as 9546, name as Theresa Jenkins, email as carl40@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (9546, 'Theresa Jenkins', 'carl40@example.com', 'Sales', 67599.06, '2023-01-16', 7764);","db.employees.insertOne({
+  ""employee_id"": 9546,
+  ""name"": ""Theresa Jenkins"",
+  ""email"": ""carl40@example.com"",
+  ""department"": ""Sales"",
+  ""salary"": 67599.06,
+  ""hire_date"": ""2023-01-16"",
+  ""age"": 7764
+})",CREATE
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+Update departments set budget to 1819.89 where manager_id is 5732,UPDATE departments SET budget = '1819.89' WHERE manager_id = '5732';,"db.departments.updateMany({manager_id: '5732'}, {$set: {budget: '1819.89'}})",UPDATE
+Count all products,SELECT COUNT(*) FROM products;,db.products.countDocuments({}),READ
+Change order_id to 6021 for all orders,UPDATE orders SET order_id = '6021';,"db.orders.updateMany({}, {$set: {order_id: '6021'}})",UPDATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Remove products where stock_quantity is 5304,DELETE FROM products WHERE stock_quantity = '5304';,db.products.deleteMany({stock_quantity: '5304'}),DELETE
+"Insert a new order with order_id as 2528, customer_name as April Cook, product_name as Francisco Crawford","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2528, 'April Cook', 'Francisco Crawford', 8852, '2024-04-11', 80974.54);","db.orders.insertOne({
+  ""order_id"": 2528,
+  ""customer_name"": ""April Cook"",
+  ""product_name"": ""Francisco Crawford"",
+  ""quantity"": 8852,
+  ""order_date"": ""2024-04-11"",
+  ""total_amount"": 80974.54
+})",CREATE
+Update projects set project_id to 4332 where project_name is Brian Scott,UPDATE projects SET project_id = '4332' WHERE project_name = 'Brian Scott';,"db.projects.updateMany({project_name: 'Brian Scott'}, {$set: {project_id: '4332'}})",UPDATE
+Remove products where stock_quantity is 840,DELETE FROM products WHERE stock_quantity = '840';,db.products.deleteMany({stock_quantity: '840'}),DELETE
+"Insert a new employee with employee_id as 3899, name as Bonnie Lopez, email as rebecca33@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (3899, 'Bonnie Lopez', 'rebecca33@example.org', 'Finance', 24358.57, '2023-06-04', 8408);","db.employees.insertOne({
+  ""employee_id"": 3899,
+  ""name"": ""Bonnie Lopez"",
+  ""email"": ""rebecca33@example.org"",
+  ""department"": ""Finance"",
+  ""salary"": 24358.57,
+  ""hire_date"": ""2023-06-04"",
+  ""age"": 8408
+})",CREATE
+Change project_id to 975 for all projects,UPDATE projects SET project_id = '975';,"db.projects.updateMany({}, {$set: {project_id: '975'}})",UPDATE
+Get all location from departments,SELECT location FROM departments;,"db.departments.find({}, {location: 1})",READ
+Show departments with department_id greater than 49005,SELECT * FROM departments WHERE department_id > 49005;,db.departments.find({department_id: {$gt: 49005}}),READ
+Update projects set start_date to 2025-07-06 where project_name is George Smith,UPDATE projects SET start_date = '2025-07-06' WHERE project_name = 'George Smith';,"db.projects.updateMany({project_name: 'George Smith'}, {$set: {start_date: '2025-07-06'}})",UPDATE
+Change end_date to 2022-11-28 for all projects,UPDATE projects SET end_date = '2022-11-28';,"db.projects.updateMany({}, {$set: {end_date: '2022-11-28'}})",UPDATE
+Change quantity to 3706 for all orders,UPDATE orders SET quantity = '3706';,"db.orders.updateMany({}, {$set: {quantity: '3706'}})",UPDATE
+Delete projects with budget less than 39700,DELETE FROM projects WHERE budget < 39700;,db.projects.deleteMany({budget: {$lt: 39700}}),DELETE
+Change product_name to Kim Miller for all orders,UPDATE orders SET product_name = 'Kim Miller';,"db.orders.updateMany({}, {$set: {product_name: 'Kim Miller'}})",UPDATE
+Update employees set employee_id to 4952 where hire_date is 2021-10-03,UPDATE employees SET employee_id = '4952' WHERE hire_date = '2021-10-03';,"db.employees.updateMany({hire_date: '2021-10-03'}, {$set: {employee_id: '4952'}})",UPDATE
+Update orders set product_name to Michael Stephens where quantity is 8115,UPDATE orders SET product_name = 'Michael Stephens' WHERE quantity = '8115';,"db.orders.updateMany({quantity: '8115'}, {$set: {product_name: 'Michael Stephens'}})",UPDATE
+Remove departments where location is Port Laura,DELETE FROM departments WHERE location = 'Port Laura';,db.departments.deleteMany({location: 'Port Laura'}),DELETE
+Increase stock_quantity by 1736 in products where price equals 56068.28,UPDATE products SET stock_quantity = stock_quantity + 1736 WHERE price = '56068.28';,"db.products.updateMany({price: '56068.28'}, {$inc: {stock_quantity: 1736}})",UPDATE
+Delete employees with age less than 7578,DELETE FROM employees WHERE age < 7578;,db.employees.deleteMany({age: {$lt: 7578}}),DELETE
+"Insert a new order with order_id as 8641, customer_name as Keith Anderson, product_name as Michael Burke","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (8641, 'Keith Anderson', 'Michael Burke', 997, '2023-03-05', 30472.98);","db.orders.insertOne({
+  ""order_id"": 8641,
+  ""customer_name"": ""Keith Anderson"",
+  ""product_name"": ""Michael Burke"",
+  ""quantity"": 997,
+  ""order_date"": ""2023-03-05"",
+  ""total_amount"": 30472.98
+})",CREATE
+Remove projects where status is Completed,DELETE FROM projects WHERE status = 'Completed';,db.projects.deleteMany({status: 'Completed'}),DELETE
+Get top 35 projects ordered by budget,SELECT * FROM projects ORDER BY budget DESC LIMIT 35;,db.projects.find({}).sort({budget: -1}).limit(35),READ
+"Insert a new employee with employee_id as 5909, name as Jeffrey Stephens, email as robertwatson@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (5909, 'Jeffrey Stephens', 'robertwatson@example.org', 'Operations', 74228.71, '2023-09-01', 5258);","db.employees.insertOne({
+  ""employee_id"": 5909,
+  ""name"": ""Jeffrey Stephens"",
+  ""email"": ""robertwatson@example.org"",
+  ""department"": ""Operations"",
+  ""salary"": 74228.71,
+  ""hire_date"": ""2023-09-01"",
+  ""age"": 5258
+})",CREATE
+Change budget to 92003.51 for all projects,UPDATE projects SET budget = '92003.51';,"db.projects.updateMany({}, {$set: {budget: '92003.51'}})",UPDATE
+Find employees where name contains staff,SELECT * FROM employees WHERE name LIKE '%staff%';,"db.employees.find({name: {$regex: 'staff', $options: 'i'}})",READ
+"Insert a new department with department_id as 6204, department_name as Marissa Hernandez, manager_id as 5246","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (6204, 'Marissa Hernandez', 5246, 82287.2, 'New Erinfurt');","db.departments.insertOne({
+  ""department_id"": 6204,
+  ""department_name"": ""Marissa Hernandez"",
+  ""manager_id"": 5246,
+  ""budget"": 82287.2,
+  ""location"": ""New Erinfurt""
+})",CREATE
+Change email to lucerojames@example.org for all employees,UPDATE employees SET email = 'lucerojames@example.org';,"db.employees.updateMany({}, {$set: {email: 'lucerojames@example.org'}})",UPDATE
+"Insert a new employee with employee_id as 2546, name as Shannon Jones, email as jasonjones@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (2546, 'Shannon Jones', 'jasonjones@example.com', 'Engineering', 21238.11, '2022-04-15', 7339);","db.employees.insertOne({
+  ""employee_id"": 2546,
+  ""name"": ""Shannon Jones"",
+  ""email"": ""jasonjones@example.com"",
+  ""department"": ""Engineering"",
+  ""salary"": 21238.11,
+  ""hire_date"": ""2022-04-15"",
+  ""age"": 7339
+})",CREATE
+"Insert a new product with product_id as 6087, product_name as Kevin Ortiz, category as Office Supplies","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6087, 'Kevin Ortiz', 'Office Supplies', 99953.01, 6200, 'Osborn Ltd');","db.products.insertOne({
+  ""product_id"": 6087,
+  ""product_name"": ""Kevin Ortiz"",
+  ""category"": ""Office Supplies"",
+  ""price"": 99953.01,
+  ""stock_quantity"": 6200,
+  ""supplier"": ""Osborn Ltd""
+})",CREATE
+Increase order_id by 4009 in orders where customer_name equals Richard Adams,UPDATE orders SET order_id = order_id + 4009 WHERE customer_name = 'Richard Adams';,"db.orders.updateMany({customer_name: 'Richard Adams'}, {$inc: {order_id: 4009}})",UPDATE
+"Insert a new order with order_id as 2240, customer_name as Derek Schwartz, product_name as Christian Burnett","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2240, 'Derek Schwartz', 'Christian Burnett', 4978, '2024-03-12', 11418.21);","db.orders.insertOne({
+  ""order_id"": 2240,
+  ""customer_name"": ""Derek Schwartz"",
+  ""product_name"": ""Christian Burnett"",
+  ""quantity"": 4978,
+  ""order_date"": ""2024-03-12"",
+  ""total_amount"": 11418.21
+})",CREATE
+Increase manager_id by 306 in departments where budget equals 90694.62,UPDATE departments SET manager_id = manager_id + 306 WHERE budget = '90694.62';,"db.departments.updateMany({budget: '90694.62'}, {$inc: {manager_id: 306}})",UPDATE
+Change product_name to Brittany Williams for all products,UPDATE products SET product_name = 'Brittany Williams';,"db.products.updateMany({}, {$set: {product_name: 'Brittany Williams'}})",UPDATE
+"Insert a new employee with employee_id as 256, name as Melissa Stafford, email as xwilliams@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (256, 'Melissa Stafford', 'xwilliams@example.com', 'Finance', 15268.18, '2024-01-31', 6455);","db.employees.insertOne({
+  ""employee_id"": 256,
+  ""name"": ""Melissa Stafford"",
+  ""email"": ""xwilliams@example.com"",
+  ""department"": ""Finance"",
+  ""salary"": 15268.18,
+  ""hire_date"": ""2024-01-31"",
+  ""age"": 6455
+})",CREATE
+"Insert a new employee with employee_id as 4548, name as Michael Mooney, email as ssmith@example.net","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (4548, 'Michael Mooney', 'ssmith@example.net', 'Marketing', 36116.33, '2021-04-15', 8920);","db.employees.insertOne({
+  ""employee_id"": 4548,
+  ""name"": ""Michael Mooney"",
+  ""email"": ""ssmith@example.net"",
+  ""department"": ""Marketing"",
+  ""salary"": 36116.33,
+  ""hire_date"": ""2021-04-15"",
+  ""age"": 8920
+})",CREATE
+Get top 27 products ordered by price,SELECT * FROM products ORDER BY price DESC LIMIT 27;,db.products.find({}).sort({price: -1}).limit(27),READ
+Get all department_id from departments,SELECT department_id FROM departments;,"db.departments.find({}, {department_id: 1})",READ
+"Insert a new department with department_id as 1068, department_name as Curtis Wells, manager_id as 229","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (1068, 'Curtis Wells', 229, 46779.78, 'Melaniestad');","db.departments.insertOne({
+  ""department_id"": 1068,
+  ""department_name"": ""Curtis Wells"",
+  ""manager_id"": 229,
+  ""budget"": 46779.78,
+  ""location"": ""Melaniestad""
+})",CREATE
+Delete employees with salary less than 38889,DELETE FROM employees WHERE salary < 38889;,db.employees.deleteMany({salary: {$lt: 38889}}),DELETE
+Delete orders with total_amount less than 38872,DELETE FROM orders WHERE total_amount < 38872;,db.orders.deleteMany({total_amount: {$lt: 38872}}),DELETE
+Delete orders with quantity less than 20167,DELETE FROM orders WHERE quantity < 20167;,db.orders.deleteMany({quantity: {$lt: 20167}}),DELETE
+Delete all orders,DELETE FROM orders;,db.orders.deleteMany({}),DELETE
+Change customer_name to Elaine Phillips for all orders,UPDATE orders SET customer_name = 'Elaine Phillips';,"db.orders.updateMany({}, {$set: {customer_name: 'Elaine Phillips'}})",UPDATE
+Find products where supplier contains within,SELECT * FROM products WHERE supplier LIKE '%within%';,"db.products.find({supplier: {$regex: 'within', $options: 'i'}})",READ
+Delete orders with order_id less than 30846,DELETE FROM orders WHERE order_id < 30846;,db.orders.deleteMany({order_id: {$lt: 30846}}),DELETE
+Find orders where product_name is Harry Hurst,SELECT * FROM orders WHERE product_name = 'Harry Hurst';,db.orders.find({product_name: 'Harry Hurst'}),READ
+Show average project_id from projects,SELECT AVG(project_id) FROM projects;,"db.projects.aggregate([{$group: {_id: null, avg: {$avg: '$project_id'}}}])",READ
+"Insert a new product with product_id as 1511, product_name as Jessica Williams, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (1511, 'Jessica Williams', 'Electronics', 62177.2, 8808, 'Rhodes, Smith and Rodriguez');","db.products.insertOne({
+  ""product_id"": 1511,
+  ""product_name"": ""Jessica Williams"",
+  ""category"": ""Electronics"",
+  ""price"": 62177.2,
+  ""stock_quantity"": 8808,
+  ""supplier"": ""Rhodes, Smith and Rodriguez""
+})",CREATE
+"Insert a new employee with employee_id as 7387, name as Mary Shepherd, email as michaelhernandez@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (7387, 'Mary Shepherd', 'michaelhernandez@example.com', 'Engineering', 34433.93, '2022-02-06', 9777);","db.employees.insertOne({
+  ""employee_id"": 7387,
+  ""name"": ""Mary Shepherd"",
+  ""email"": ""michaelhernandez@example.com"",
+  ""department"": ""Engineering"",
+  ""salary"": 34433.93,
+  ""hire_date"": ""2022-02-06"",
+  ""age"": 9777
+})",CREATE
+Delete orders with total_amount less than 42030,DELETE FROM orders WHERE total_amount < 42030;,db.orders.deleteMany({total_amount: {$lt: 42030}}),DELETE
+Delete employees with salary less than 25474,DELETE FROM employees WHERE salary < 25474;,db.employees.deleteMany({salary: {$lt: 25474}}),DELETE
+Show all projects,SELECT * FROM projects;,db.projects.find({}),READ
+Find departments where department_id is 5646,SELECT * FROM departments WHERE department_id = '5646';,db.departments.find({department_id: '5646'}),READ
+Delete products with product_id less than 18646,DELETE FROM products WHERE product_id < 18646;,db.products.deleteMany({product_id: {$lt: 18646}}),DELETE
+"Insert a new department with department_id as 5660, department_name as Mary Jenkins, manager_id as 2108","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (5660, 'Mary Jenkins', 2108, 65907.59, 'Tashaport');","db.departments.insertOne({
+  ""department_id"": 5660,
+  ""department_name"": ""Mary Jenkins"",
+  ""manager_id"": 2108,
+  ""budget"": 65907.59,
+  ""location"": ""Tashaport""
+})",CREATE
+Change department to Sales for all employees,UPDATE employees SET department = 'Sales';,"db.employees.updateMany({}, {$set: {department: 'Sales'}})",UPDATE
+Increase total_amount by 4122 in orders where customer_name equals Jaime Castillo,UPDATE orders SET total_amount = total_amount + 4122 WHERE customer_name = 'Jaime Castillo';,"db.orders.updateMany({customer_name: 'Jaime Castillo'}, {$inc: {total_amount: 4122}})",UPDATE
+Update departments set location to Willisshire where location is Jacksonville,UPDATE departments SET location = 'Willisshire' WHERE location = 'Jacksonville';,"db.departments.updateMany({location: 'Jacksonville'}, {$set: {location: 'Willisshire'}})",UPDATE
+"Insert a new department with department_id as 9258, department_name as Leslie Sims, manager_id as 879","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (9258, 'Leslie Sims', 879, 56163.05, 'Thompsonfort');","db.departments.insertOne({
+  ""department_id"": 9258,
+  ""department_name"": ""Leslie Sims"",
+  ""manager_id"": 879,
+  ""budget"": 56163.05,
+  ""location"": ""Thompsonfort""
+})",CREATE
+Increase salary by 4703 in employees where email equals shannonchristian@example.net,UPDATE employees SET salary = salary + 4703 WHERE email = 'shannonchristian@example.net';,"db.employees.updateMany({email: 'shannonchristian@example.net'}, {$inc: {salary: 4703}})",UPDATE
+"Change supplier to Lowe, Scott and Ramos for all products","UPDATE products SET supplier = 'Lowe, Scott and Ramos';","db.products.updateMany({}, {$set: {supplier: 'Lowe, Scott and Ramos'}})",UPDATE
+Change project_name to Kathy Murphy for all projects,UPDATE projects SET project_name = 'Kathy Murphy';,"db.projects.updateMany({}, {$set: {project_name: 'Kathy Murphy'}})",UPDATE
+Count all employees,SELECT COUNT(*) FROM employees;,db.employees.countDocuments({}),READ
+Show employees with email greater than 93769,SELECT * FROM employees WHERE email > 93769;,db.employees.find({email: {$gt: 93769}}),READ
+Update projects set project_id to 9298 where budget is 65704.27,UPDATE projects SET project_id = '9298' WHERE budget = '65704.27';,"db.projects.updateMany({budget: '65704.27'}, {$set: {project_id: '9298'}})",UPDATE
+Find departments where manager_id is 9034,SELECT * FROM departments WHERE manager_id = '9034';,db.departments.find({manager_id: '9034'}),READ
+Show average employee_id from employees,SELECT AVG(employee_id) FROM employees;,"db.employees.aggregate([{$group: {_id: null, avg: {$avg: '$employee_id'}}}])",READ
+Get all age from employees,SELECT age FROM employees;,"db.employees.find({}, {age: 1})",READ
+"Insert a new department with department_id as 4329, department_name as Christopher Johnson, manager_id as 4841","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (4329, 'Christopher Johnson', 4841, 23160.57, 'Mannstad');","db.departments.insertOne({
+  ""department_id"": 4329,
+  ""department_name"": ""Christopher Johnson"",
+  ""manager_id"": 4841,
+  ""budget"": 23160.57,
+  ""location"": ""Mannstad""
+})",CREATE
+"Insert a new department with department_id as 4237, department_name as William Briggs, manager_id as 5860","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (4237, 'William Briggs', 5860, 13813.0, 'Robertmouth');","db.departments.insertOne({
+  ""department_id"": 4237,
+  ""department_name"": ""William Briggs"",
+  ""manager_id"": 5860,
+  ""budget"": 13813.0,
+  ""location"": ""Robertmouth""
+})",CREATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+"Insert a new project with project_id as 675, project_name as Joseph Stafford, start_date as 2022-03-30","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (675, 'Joseph Stafford', '2022-03-30', '2022-05-20', 5011.12, 'Pending');","db.projects.insertOne({
+  ""project_id"": 675,
+  ""project_name"": ""Joseph Stafford"",
+  ""start_date"": ""2022-03-30"",
+  ""end_date"": ""2022-05-20"",
+  ""budget"": 5011.12,
+  ""status"": ""Pending""
+})",CREATE
+"Insert a new product with product_id as 6730, product_name as Tina Smith, category as Electronics","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6730, 'Tina Smith', 'Electronics', 30361.55, 5477, 'Hogan PLC');","db.products.insertOne({
+  ""product_id"": 6730,
+  ""product_name"": ""Tina Smith"",
+  ""category"": ""Electronics"",
+  ""price"": 30361.55,
+  ""stock_quantity"": 5477,
+  ""supplier"": ""Hogan PLC""
+})",CREATE
+Increase salary by 3763 in employees where salary equals 86903.34,UPDATE employees SET salary = salary + 3763 WHERE salary = '86903.34';,"db.employees.updateMany({salary: '86903.34'}, {$inc: {salary: 3763}})",UPDATE
+Find departments where manager_id contains again,SELECT * FROM departments WHERE manager_id LIKE '%again%';,"db.departments.find({manager_id: {$regex: 'again', $options: 'i'}})",READ
+Delete departments with department_id less than 5156,DELETE FROM departments WHERE department_id < 5156;,db.departments.deleteMany({department_id: {$lt: 5156}}),DELETE
+Change price to 81183.8 for all products,UPDATE products SET price = '81183.8';,"db.products.updateMany({}, {$set: {price: '81183.8'}})",UPDATE
+Increase department_id by 4748 in departments where manager_id equals 8517,UPDATE departments SET department_id = department_id + 4748 WHERE manager_id = '8517';,"db.departments.updateMany({manager_id: '8517'}, {$inc: {department_id: 4748}})",UPDATE
+Update orders set order_date to 2024-09-16 where order_id is 1810,UPDATE orders SET order_date = '2024-09-16' WHERE order_id = '1810';,"db.orders.updateMany({order_id: '1810'}, {$set: {order_date: '2024-09-16'}})",UPDATE
+Remove orders where order_date is 2023-11-12,DELETE FROM orders WHERE order_date = '2023-11-12';,db.orders.deleteMany({order_date: '2023-11-12'}),DELETE
+Delete all departments,DELETE FROM departments;,db.departments.deleteMany({}),DELETE
+"Insert a new employee with employee_id as 91, name as Karen Barnett, email as browncatherine@example.org","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (91, 'Karen Barnett', 'browncatherine@example.org', 'Marketing', 13544.71, '2022-01-05', 5329);","db.employees.insertOne({
+  ""employee_id"": 91,
+  ""name"": ""Karen Barnett"",
+  ""email"": ""browncatherine@example.org"",
+  ""department"": ""Marketing"",
+  ""salary"": 13544.71,
+  ""hire_date"": ""2022-01-05"",
+  ""age"": 5329
+})",CREATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+Delete all orders,DELETE FROM orders;,db.orders.deleteMany({}),DELETE
+"Insert a new product with product_id as 6400, product_name as Lauren Martinez, category as Furniture","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6400, 'Lauren Martinez', 'Furniture', 69395.54, 695, 'Soto-Davis');","db.products.insertOne({
+  ""product_id"": 6400,
+  ""product_name"": ""Lauren Martinez"",
+  ""category"": ""Furniture"",
+  ""price"": 69395.54,
+  ""stock_quantity"": 695,
+  ""supplier"": ""Soto-Davis""
+})",CREATE
+Increase age by 3205 in employees where salary equals 94948.63,UPDATE employees SET age = age + 3205 WHERE salary = '94948.63';,"db.employees.updateMany({salary: '94948.63'}, {$inc: {age: 3205}})",UPDATE
+"Insert a new product with product_id as 1518, product_name as Teresa Fisher, category as Hardware","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (1518, 'Teresa Fisher', 'Hardware', 13657.37, 6113, 'Johnson, Edwards and Dickson');","db.products.insertOne({
+  ""product_id"": 1518,
+  ""product_name"": ""Teresa Fisher"",
+  ""category"": ""Hardware"",
+  ""price"": 13657.37,
+  ""stock_quantity"": 6113,
+  ""supplier"": ""Johnson, Edwards and Dickson""
+})",CREATE
+"Insert a new department with department_id as 7582, department_name as Stephen Rodgers, manager_id as 7695","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (7582, 'Stephen Rodgers', 7695, 98473.39, 'Whitemouth');","db.departments.insertOne({
+  ""department_id"": 7582,
+  ""department_name"": ""Stephen Rodgers"",
+  ""manager_id"": 7695,
+  ""budget"": 98473.39,
+  ""location"": ""Whitemouth""
+})",CREATE
+Remove departments where manager_id is 5470,DELETE FROM departments WHERE manager_id = '5470';,db.departments.deleteMany({manager_id: '5470'}),DELETE
+Update departments set budget to 6868.38 where budget is 92400.43,UPDATE departments SET budget = '6868.38' WHERE budget = '92400.43';,"db.departments.updateMany({budget: '92400.43'}, {$set: {budget: '6868.38'}})",UPDATE
+Delete orders with order_id less than 49793,DELETE FROM orders WHERE order_id < 49793;,db.orders.deleteMany({order_id: {$lt: 49793}}),DELETE
+Find orders where customer_name is Kenneth Mack,SELECT * FROM orders WHERE customer_name = 'Kenneth Mack';,db.orders.find({customer_name: 'Kenneth Mack'}),READ
+Change end_date to 2022-12-07 for all projects,UPDATE projects SET end_date = '2022-12-07';,"db.projects.updateMany({}, {$set: {end_date: '2022-12-07'}})",UPDATE
+"Insert a new employee with employee_id as 2242, name as Walter Bush, email as kristinarhodes@example.com","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (2242, 'Walter Bush', 'kristinarhodes@example.com', 'Sales', 67060.12, '2023-11-28', 6947);","db.employees.insertOne({
+  ""employee_id"": 2242,
+  ""name"": ""Walter Bush"",
+  ""email"": ""kristinarhodes@example.com"",
+  ""department"": ""Sales"",
+  ""salary"": 67060.12,
+  ""hire_date"": ""2023-11-28"",
+  ""age"": 6947
+})",CREATE
+Find orders where customer_name contains third,SELECT * FROM orders WHERE customer_name LIKE '%third%';,"db.orders.find({customer_name: {$regex: 'third', $options: 'i'}})",READ
+Show orders with total_amount greater than 93159,SELECT * FROM orders WHERE total_amount > 93159;,db.orders.find({total_amount: {$gt: 93159}}),READ
+"Insert a new order with order_id as 2362, customer_name as Steven Barber, product_name as Kimberly West","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2362, 'Steven Barber', 'Kimberly West', 4300, '2021-08-06', 95392.64);","db.orders.insertOne({
+  ""order_id"": 2362,
+  ""customer_name"": ""Steven Barber"",
+  ""product_name"": ""Kimberly West"",
+  ""quantity"": 4300,
+  ""order_date"": ""2021-08-06"",
+  ""total_amount"": 95392.64
+})",CREATE
+Delete all projects,DELETE FROM projects;,db.projects.deleteMany({}),DELETE
+"Insert a new order with order_id as 1582, customer_name as Caroline Brown, product_name as Tammy Baxter","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (1582, 'Caroline Brown', 'Tammy Baxter', 7306, '2022-10-15', 13123.6);","db.orders.insertOne({
+  ""order_id"": 1582,
+  ""customer_name"": ""Caroline Brown"",
+  ""product_name"": ""Tammy Baxter"",
+  ""quantity"": 7306,
+  ""order_date"": ""2022-10-15"",
+  ""total_amount"": 13123.6
+})",CREATE
+Change stock_quantity to 1692 for all products,UPDATE products SET stock_quantity = '1692';,"db.products.updateMany({}, {$set: {stock_quantity: '1692'}})",UPDATE
+Remove orders where product_name is Angela Carter,DELETE FROM orders WHERE product_name = 'Angela Carter';,db.orders.deleteMany({product_name: 'Angela Carter'}),DELETE
+Count all departments,SELECT COUNT(*) FROM departments;,db.departments.countDocuments({}),READ
+"Insert a new project with project_id as 4227, project_name as Nicholas Cherry, start_date as 2022-11-10","INSERT INTO projects (project_id, project_name, start_date, end_date, budget, status) VALUES (4227, 'Nicholas Cherry', '2022-11-10', '2025-12-31', 70744.38, 'Active');","db.projects.insertOne({
+  ""project_id"": 4227,
+  ""project_name"": ""Nicholas Cherry"",
+  ""start_date"": ""2022-11-10"",
+  ""end_date"": ""2025-12-31"",
+  ""budget"": 70744.38,
+  ""status"": ""Active""
+})",CREATE
+"Insert a new order with order_id as 6831, customer_name as Emily Sanders, product_name as Laurie Tucker","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (6831, 'Emily Sanders', 'Laurie Tucker', 2426, '2021-06-05', 92082.51);","db.orders.insertOne({
+  ""order_id"": 6831,
+  ""customer_name"": ""Emily Sanders"",
+  ""product_name"": ""Laurie Tucker"",
+  ""quantity"": 2426,
+  ""order_date"": ""2021-06-05"",
+  ""total_amount"": 92082.51
+})",CREATE
+Remove projects where status is Active,DELETE FROM projects WHERE status = 'Active';,db.projects.deleteMany({status: 'Active'}),DELETE
+Find projects where end_date is 2021-09-20,SELECT * FROM projects WHERE end_date = '2021-09-20';,db.projects.find({end_date: '2021-09-20'}),READ
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+Update orders set order_date to 2024-03-24 where customer_name is Brenda Avila,UPDATE orders SET order_date = '2024-03-24' WHERE customer_name = 'Brenda Avila';,"db.orders.updateMany({customer_name: 'Brenda Avila'}, {$set: {order_date: '2024-03-24'}})",UPDATE
+Change status to Completed for all projects,UPDATE projects SET status = 'Completed';,"db.projects.updateMany({}, {$set: {status: 'Completed'}})",UPDATE
+Remove orders where customer_name is April Schultz,DELETE FROM orders WHERE customer_name = 'April Schultz';,db.orders.deleteMany({customer_name: 'April Schultz'}),DELETE
+"Insert a new employee with employee_id as 1772, name as Justin Clayton, email as amycarey@example.net","INSERT INTO employees (employee_id, name, email, department, salary, hire_date, age) VALUES (1772, 'Justin Clayton', 'amycarey@example.net', 'Marketing', 23923.63, '2022-01-16', 3586);","db.employees.insertOne({
+  ""employee_id"": 1772,
+  ""name"": ""Justin Clayton"",
+  ""email"": ""amycarey@example.net"",
+  ""department"": ""Marketing"",
+  ""salary"": 23923.63,
+  ""hire_date"": ""2022-01-16"",
+  ""age"": 3586
+})",CREATE
+"Insert a new order with order_id as 5318, customer_name as Emily Peterson, product_name as Jeremy James","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (5318, 'Emily Peterson', 'Jeremy James', 5064, '2021-11-02', 77946.2);","db.orders.insertOne({
+  ""order_id"": 5318,
+  ""customer_name"": ""Emily Peterson"",
+  ""product_name"": ""Jeremy James"",
+  ""quantity"": 5064,
+  ""order_date"": ""2021-11-02"",
+  ""total_amount"": 77946.2
+})",CREATE
+Get all budget from departments,SELECT budget FROM departments;,"db.departments.find({}, {budget: 1})",READ
+Change location to Grimesfurt for all departments,UPDATE departments SET location = 'Grimesfurt';,"db.departments.updateMany({}, {$set: {location: 'Grimesfurt'}})",UPDATE
+Find employees where employee_id is 3069,SELECT * FROM employees WHERE employee_id = '3069';,db.employees.find({employee_id: '3069'}),READ
+Delete departments with department_id less than 34184,DELETE FROM departments WHERE department_id < 34184;,db.departments.deleteMany({department_id: {$lt: 34184}}),DELETE
+Increase budget by 2988 in projects where project_id equals 2428,UPDATE projects SET budget = budget + 2988 WHERE project_id = '2428';,"db.projects.updateMany({project_id: '2428'}, {$inc: {budget: 2988}})",UPDATE
+Delete projects with budget less than 46229,DELETE FROM projects WHERE budget < 46229;,db.projects.deleteMany({budget: {$lt: 46229}}),DELETE
+Update projects set status to Completed where status is Completed,UPDATE projects SET status = 'Completed' WHERE status = 'Completed';,"db.projects.updateMany({status: 'Completed'}, {$set: {status: 'Completed'}})",UPDATE
+Get top 42 products ordered by price,SELECT * FROM products ORDER BY price DESC LIMIT 42;,db.products.find({}).sort({price: -1}).limit(42),READ
+Update orders set quantity to 9275 where quantity is 9244,UPDATE orders SET quantity = '9275' WHERE quantity = '9244';,"db.orders.updateMany({quantity: '9244'}, {$set: {quantity: '9275'}})",UPDATE
+Delete all products,DELETE FROM products;,db.products.deleteMany({}),DELETE
+"Insert a new order with order_id as 4152, customer_name as Carrie Taylor, product_name as Steven Ramos","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (4152, 'Carrie Taylor', 'Steven Ramos', 2060, '2024-12-09', 38543.5);","db.orders.insertOne({
+  ""order_id"": 4152,
+  ""customer_name"": ""Carrie Taylor"",
+  ""product_name"": ""Steven Ramos"",
+  ""quantity"": 2060,
+  ""order_date"": ""2024-12-09"",
+  ""total_amount"": 38543.5
+})",CREATE
+"Insert a new department with department_id as 1482, department_name as Megan Kim, manager_id as 9762","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (1482, 'Megan Kim', 9762, 16077.35, 'Harperland');","db.departments.insertOne({
+  ""department_id"": 1482,
+  ""department_name"": ""Megan Kim"",
+  ""manager_id"": 9762,
+  ""budget"": 16077.35,
+  ""location"": ""Harperland""
+})",CREATE
+"Insert a new department with department_id as 2329, department_name as Marcus Stuart, manager_id as 3511","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (2329, 'Marcus Stuart', 3511, 46507.41, 'South Elizabeth');","db.departments.insertOne({
+  ""department_id"": 2329,
+  ""department_name"": ""Marcus Stuart"",
+  ""manager_id"": 3511,
+  ""budget"": 46507.41,
+  ""location"": ""South Elizabeth""
+})",CREATE
+Show all departments,SELECT * FROM departments;,db.departments.find({}),READ

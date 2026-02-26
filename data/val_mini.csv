@@ -1,0 +1,26 @@
+natural_language,sql,mongodb,operation
+Remove products where product_id is 2233,DELETE FROM products WHERE product_id = '2233';,db.products.deleteMany({product_id: '2233'}),DELETE
+"Insert a new order with order_id as 2942, customer_name as Holly Bradford, product_name as Carol Gross","INSERT INTO orders (order_id, customer_name, product_name, quantity, order_date, total_amount) VALUES (2942, 'Holly Bradford', 'Carol Gross', 1662, '2023-03-05', 33399.43);","db.orders.insertOne({
+  ""order_id"": 2942,
+  ""customer_name"": ""Holly Bradford"",
+  ""product_name"": ""Carol Gross"",
+  ""quantity"": 1662,
+  ""order_date"": ""2023-03-05"",
+  ""total_amount"": 33399.43
+})",CREATE
+Change department_id to 4041 for all departments,UPDATE departments SET department_id = '4041';,"db.departments.updateMany({}, {$set: {department_id: '4041'}})",UPDATE
+"Insert a new product with product_id as 6269, product_name as Allison Rodriguez, category as Furniture","INSERT INTO products (product_id, product_name, category, price, stock_quantity, supplier) VALUES (6269, 'Allison Rodriguez', 'Furniture', 67429.07, 2465, 'Fisher-Bryant');","db.products.insertOne({
+  ""product_id"": 6269,
+  ""product_name"": ""Allison Rodriguez"",
+  ""category"": ""Furniture"",
+  ""price"": 67429.07,
+  ""stock_quantity"": 2465,
+  ""supplier"": ""Fisher-Bryant""
+})",CREATE
+"Insert a new department with department_id as 5854, department_name as Cynthia Lee, manager_id as 3886","INSERT INTO departments (department_id, department_name, manager_id, budget, location) VALUES (5854, 'Cynthia Lee', 3886, 72293.04, 'Johnsonchester');","db.departments.insertOne({
+  ""department_id"": 5854,
+  ""department_name"": ""Cynthia Lee"",
+  ""manager_id"": 3886,
+  ""budget"": 72293.04,
+  ""location"": ""Johnsonchester""
+})",CREATE
